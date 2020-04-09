@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ПогодаГБ</string>
+    <string name="hello">Доброе Утро!</string>
+    <string name="Button">"?"</string>
+    <string name="button2">"+"</string>
+    <string name="City">Город</string>
+    <string name="Country">Страна</string>
+    <string name="weather">"0"</string>
+    <string name="image">image</string>
+    <string name="test">Рандом</string>
+    <string name="textPast">" "</string>
+    <string name="textPresent">" "</string>
+    <string name="textFuture">" "</string>
+    <string name="textType">" "</string>
+    <string name="dayOne">Перый</string>
+    <string name="dayTwo">Второй</string>
+    <string name="dayThree">Третий</string>
+</resources>
