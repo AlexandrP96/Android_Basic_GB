@@ -6,7 +6,6 @@
     <string name="City">City</string>
     <string name="Country">Country</string>
     <string name="weather">"0"</string>
-    <string name="image">image</string>
     <string name="test">Random</string>
     <string name="textPast">" "</string>
     <string name="textPresent">" "</string>
@@ -15,4 +14,10 @@
     <string name="dayOne">dayOne</string>
     <string name="dayTwo">dayTwo</string>
     <string name="dayThree">dayThree</string>
+    <string name="Default_bg">Default_bg</string>
+    <string name="cNew_York">New York</string>
+    <string name="d1">" "</string>
+    <string name="d2">" "</string>
+    <string name="dd3">" "</string>
+    <string name="todo">TODO</string>
 </resources>

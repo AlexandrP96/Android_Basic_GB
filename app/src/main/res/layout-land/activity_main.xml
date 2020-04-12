@@ -6,69 +6,51 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/buttonPlus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.776"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.055" />
-
-    <TextView
-        android:id="@+id/textStatus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.052" />
-
-    <Button
-        android:id="@+id/buttonQuestion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/button2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.22"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.055" />
-
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="155dp"
-        android:layout_height="131dp"
-        android:contentDescription="@string/image"
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="500dp"
+        android:contentDescription="@string/todo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.13"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.325"
-        app:srcCompat="@android:drawable/ic_menu_gallery" />
+        app:srcCompat="@drawable/land_cloudy_blur" />
 
-    <TextView
-        android:id="@+id/textWeather"
-        android:layout_width="81dp"
-        android:layout_height="52dp"
-        android:text="@string/weather"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="346dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/textCity"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintHorizontal_bias="0.467"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.571"
-        tools:text="+ 15" />
+        app:layout_constraintVertical_bias="1.0">
+
+        <Button
+            android:id="@+id/buttonAdd"
+            android:layout_width="73dp"
+            android:layout_height="wrap_content"
+            android:onClick="open"
+            android:text="@string/button2" />
+
+        <TextView
+            android:id="@+id/textStatus"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:text="@string/hello"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/buttonQuestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="@string/Button" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textCity"
@@ -78,24 +60,119 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintHorizontal_bias="0.189"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.224"
+        app:layout_constraintVertical_bias="0.281"
         tools:text="@string/City" />
 
     <TextView
         android:id="@+id/textCountry"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="89dp"
+        android:layout_height="32dp"
         android:text="@string/Country"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintHorizontal_bias="0.188"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.354" />
+        app:layout_constraintVertical_bias="0.448" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="236dp"
+        android:layout_height="61dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.082"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.88">
+
+        <TextView
+            android:id="@+id/textPast"
+            android:layout_width="79dp"
+            android:layout_height="43dp"
+            android:text="@string/textPast" />
+
+        <TextView
+            android:id="@+id/textPresent"
+            android:layout_width="79dp"
+            android:layout_height="43dp"
+            android:layout_marginBottom="18dp"
+            android:text="@string/textPresent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textFuture"
+            app:layout_constraintStart_toEndOf="@+id/textPast"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textFuture"
+            android:layout_width="79dp"
+            android:layout_height="43dp"
+            android:text="@string/textFuture" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="256dp"
+        android:layout_height="113dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.705"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.419">
+
+        <TextView
+            android:id="@+id/dayOne"
+            android:layout_width="247dp"
+            android:layout_height="34dp"
+            android:text="@string/dayOne" />
+
+        <TextView
+            android:id="@+id/dayTwo"
+            android:layout_width="247dp"
+            android:layout_height="34dp"
+            android:text="@string/dayTwo" />
+
+        <TextView
+            android:id="@+id/dayThree"
+            android:layout_width="247dp"
+            android:layout_height="34dp"
+            android:text="@string/dayThree" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="95dp"
+        android:layout_height="85dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.656">
+
+        <TextView
+            android:id="@+id/textWeather"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/weather"
+            android:textSize="30sp"
+            tools:text="+ 15" />
+
+        <TextView
+            android:id="@+id/textType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/textType"
+            android:textSize="18sp" />
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/button5"
@@ -105,94 +182,39 @@
         android:text="@string/test"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.477"
+        app:layout_constraintHorizontal_bias="0.818"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.928" />
+        app:layout_constraintVertical_bias="0.823" />
 
-    <TextView
-        android:id="@+id/textPast"
-        android:layout_width="70dp"
-        android:layout_height="43dp"
-        android:text="@string/textPast"
+    <LinearLayout
+        android:layout_width="66dp"
+        android:layout_height="107dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.242"
+        app:layout_constraintHorizontal_bias="0.888"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.766" />
+        app:layout_constraintVertical_bias="0.411">
 
-    <TextView
-        android:id="@+id/textPresent"
-        android:layout_width="70dp"
-        android:layout_height="43dp"
-        android:text="@string/textPresent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.766" />
+        <TextView
+            android:id="@+id/d1"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:text="@string/d1" />
 
-    <TextView
-        android:id="@+id/textFuture"
-        android:layout_width="70dp"
-        android:layout_height="43dp"
-        android:text="@string/textFuture"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.726"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.766" />
+        <TextView
+            android:id="@+id/d2"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:text="@string/d2" />
 
-    <TextView
-        android:id="@+id/textType"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/textType"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.426" />
-
-    <TextView
-        android:id="@+id/dayOne"
-        android:layout_width="247dp"
-        android:layout_height="34dp"
-        android:text="@string/dayOne"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.946"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.273" />
-
-    <TextView
-        android:id="@+id/dayTwo"
-        android:layout_width="247dp"
-        android:layout_height="34dp"
-        android:text="@string/dayTwo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.946"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.411" />
-
-    <TextView
-        android:id="@+id/dayThree"
-        android:layout_width="247dp"
-        android:layout_height="34dp"
-        android:text="@string/dayThree"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.946"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.543" />
+        <TextView
+            android:id="@+id/d3"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:text="@string/dd3" />
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
