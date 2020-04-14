@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="EditText"> Enter City</string>
+    <string name="AddB">Add</string>
+    <string name="ExitB">Exit</string>
+    <string name="Tula">Tula</string>
+    <string name="Riga">Riga</string>
+    <string name="Saint_Petersburg">Saint Petersburg</string>
+    <string name="Odessa">Odessa</string>
+    <string name="Kyoto">Kyoto</string>
+    <string name="Stanbul">Stanbul</string>
+    <string name="London">London</string>
+    <string name="Montreal">Montreal</string>
+</resources>

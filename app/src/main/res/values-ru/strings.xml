@@ -7,7 +7,6 @@
     <string name="City">Город</string>
     <string name="Country">Страна</string>
     <string name="weather">"0"</string>
-    <string name="image">image</string>
     <string name="test">Рандом</string>
     <string name="textPast">" "</string>
     <string name="textPresent">" "</string>
@@ -16,4 +15,9 @@
     <string name="dayOne">Перый</string>
     <string name="dayTwo">Второй</string>
     <string name="dayThree">Третий</string>
+    <string name="Default_bg">Исходный_зф</string>
+    <string name="cNew_York">Нью Йорк</string>
+    <string name="d1">" "</string>
+    <string name="d2">" "</string>
+    <string name="dd3">" "</string>
 </resources>

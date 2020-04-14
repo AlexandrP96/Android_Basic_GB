@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="LabelFor"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/ChoseImg"
+        android:layout_width="477dp"
+        android:layout_height="869dp"
+        android:contentDescription="@string/Default_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/default_chose_blur" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="291dp"
+        android:layout_height="119dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.379">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/cNY"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/cNew_York" />
+
+            <TextView
+                android:id="@+id/cNY2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Tula" />
+
+            <TextView
+                android:id="@+id/cNY3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Riga" />
+
+            <TextView
+                android:id="@+id/cNY4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Saint_Petersburg" />
+
+            <TextView
+                android:id="@+id/cNY5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Odessa" />
+
+            <TextView
+                android:id="@+id/cNY6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Kyoto" />
+
+            <TextView
+                android:id="@+id/cNY7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Stanbul" />
+
+            <TextView
+                android:id="@+id/cNY8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/London" />
+
+            <TextView
+                android:id="@+id/cNY9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Montreal" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/AddB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="add"
+        android:text="@string/AddB"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.866"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.676" />
+
+    <Button
+        android:id="@+id/ExitB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="back"
+        android:text="@string/ExitB"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.133"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.676" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="227dp"
+        android:layout_height="44dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:inputType="text"
+        android:text="@string/EditText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.188" />
+</android.support.constraint.ConstraintLayout>
