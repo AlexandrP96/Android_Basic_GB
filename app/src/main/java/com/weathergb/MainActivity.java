@@ -1,49 +1,119 @@
+/*
+* 1 Перенёс типы данных внутрь метода
+* 2 Перенёс логику в отдельный метод
+* 3 Добавил этапы работы activity из урока
+* 4 Исправил переход на другой экран активити в приложении
+* 5 Добавил Логер из урока во все этапы работы по ДЗ
+* 6 Добавил функционал сохранения данных из урока для currTemp (Температура на данный момент)
+ */
 package com.weathergb;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String LIFECYCLE = "LIFE_CYCLE";
+    private static final String TEMPS = "TEMP_S";
     // Температура на данный момент
-    private int currTemp;
-    // Выбранная страна в данный момент
-    private String currCountry;
-    // Выбранный город
-    private String cityS;
-    private char stateP = '+';
-    private char stateM = '-';
-    // Тип температуры, значение будет меняться в настройках
-    private char TempType = 'C';
-    // Три дня вперёд
-    private String FirstD, SecondD, ThirdD;
-    // Температура на дни
-    private int FirstN, SecondN, ThridN;
-
+    // Вынес в класс по примеру из урока
+    private int currTemp = 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        pLogick();
+        Toaster("onCreate");
     }
 
-    // Тестирую Toast
-    public void onClick(View v) {
-        Toast.makeText(this, "Пашет!", Toast.LENGTH_SHORT).show();
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Toaster("onStart");
     }
 
-    // Кнокпа создания второго активити
+    // Возвращаемся
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Toaster("onResume");
+    }
+
+    // Пауза
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Toaster("onPause");
+    }
+
+    // Перезапуск
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Toaster("onRestart");
+    }
+
+    // Восстановление
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        Toaster("onRestoreInstanceState");
+        currTemp = savedInstanceState.getInt(TEMPS);
+    }
+
+    // Сохранение данных
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Toaster("onSaveInstanceState");
+        outState.putInt(TEMPS, currTemp);
+    }
+
+    // Остановка
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Toaster("onStop");
+    }
+
+    // Смэрть
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Toaster("onDestroy");
+    }
+
+    // Кнокпа перехода на второй активити
     public void open(View view) {
-        setContentView(R.layout.activity_chose);
+        Intent intent = new Intent("com.weathergb.SecondActivity");
+        startActivity(intent);
     }
 
-    // Кнопка тест
-    @SuppressLint({"SetTextI18n", "ResourceType"})
-    public void btnRandom(View V) {
+    // Логика
+    @SuppressLint("SetTextI18n")
+    public void pLogick() {
+        // Выбранная страна в данный момент
+        String currCountry;
+        // Выбранный город
+        String cityS;
+        char stateP = '+';
+        char stateM = '-';
+        // Тип температуры, значение будет меняться в настройках
+        char TempType = 'C';
+        // Три дня вперёд
+        String FirstD, SecondD, ThirdD;
+        // Температура на дни
+        int FirstN, SecondN, ThridN;
+
         TextView cel = findViewById(R.id.textWeather);
         TextView city = findViewById(R.id.textCity);
         TextView greeting = findViewById(R.id.textStatus);
@@ -59,80 +129,40 @@ public class MainActivity extends AppCompatActivity {
         TextView d2 = findViewById(R.id.d2);
         TextView d3 = findViewById(R.id.d3);
 
-        int a = (int) (Math.random() * 3);
-        if (a == 0) {
-            cityS = "Москва";
-            currCountry = "Россия";
-            FirstD = "Суббота";
-            SecondD = "Воскресенье";
-            ThirdD = "Понедельник";
-            FirstN = 8;
-            SecondN = 10;
-            ThridN = 12;
-            int pTemp = 10, fTemp = 10, paTemp = 8;
-            currTemp = pTemp;
-            cel.setText(stateP + " " + currTemp + TempType);
-            city.setText(cityS);
-            country.setText(currCountry);
-            greeting.setText("Доброе утро!");
-            past.setText(stateP + " " + paTemp + " " + TempType + "\n" + "8:00");
-            present.setText(stateP + " " + pTemp + " " + TempType + "\n" + "9:00");
-            future.setText(stateP + " " + fTemp + " " + TempType + "\n" + "10:00");
-            type.setText("Ясно");
-            dayOne.setText(FirstD);
-            d1.setText(stateP + " " + FirstN + " " + TempType);
-            dayTwo.setText(SecondD);
-            d2.setText(stateP + " " + SecondN + " " + TempType);
-            dayThree.setText(ThirdD);
-            d3.setText(stateP + " " +ThridN + " " + TempType);
-        } if (a == 1) {
-            cityS = "Осло";
-            currCountry = "Норвегия";
-            FirstD = "Понедельник";
-            SecondD = "Вторник";
-            ThirdD = "Среда";
-            FirstN = 2;
-            SecondN = 5;
-            ThridN = 3;
-            int pTemp = 4, fTemp = 3, paTemp = 2;
-            currTemp = pTemp;
-            cel.setText(stateM + " " + currTemp + TempType);
-            city.setText(cityS);
-            country.setText(currCountry);
-            greeting.setText("Добрый вечер!");
-            past.setText(stateM + " " + paTemp + " " + TempType + "\n" + "8:00");
-            present.setText(stateM + " " + pTemp + " " + TempType + "\n" + "9:00");
-            future.setText(stateM + " " + fTemp + " " + TempType + "\n" + "10:00");
-            type.setText("Туман");
-            d1.setText(stateM + " " + FirstN + " " + TempType);
-            dayTwo.setText(SecondD);
-            d2.setText(stateM + " " + SecondN + " " + TempType);
-            dayThree.setText(ThirdD);
-            d3.setText(stateM + " " +ThridN + " " + TempType);
-        } if (a == 2) {
-            cityS = "Берлин";
-            currCountry = "Германия";
-            FirstD = "Понедельник";
-            SecondD = "Вторник";
-            ThirdD = "Среда";
-            FirstN = 1;
-            SecondN = 2;
-            ThridN = 1;
-            int pTemp = 3, fTemp = 4, paTemp = 1;
-            currTemp = pTemp;
-            cel.setText(stateP + " " + currTemp + TempType);
-            city.setText(cityS);
-            country.setText(currCountry);
-            greeting.setText("Доброй ночи!");
-            past.setText(stateP + " " + paTemp + " " + TempType + "\n" + "8:00");
-            present.setText(stateP + " " + pTemp + " " + TempType + "\n" + "9:00");
-            future.setText(stateP + " " + fTemp + " " + TempType + "\n" + "10:00");
-            type.setText("Облака");
-            d1.setText(stateM + " " + FirstN + " " + TempType);
-            dayTwo.setText(SecondD);
-            d2.setText(stateM + " " + SecondN + " " + TempType);
-            dayThree.setText(ThirdD);
-            d3.setText(stateM + " " +ThridN + " " + TempType);
-        }
+        cityS = "Москва";
+        currCountry = "Россия";
+        FirstD = "Суббота";
+        SecondD = "Воскресенье";
+        ThirdD = "Понедельник";
+        FirstN = 8;
+        SecondN = 10;
+        ThridN = 12;
+        int pTemp = 10, fTemp = 10, paTemp = 8;
+
+        cel.setText(stateP + " " + currTemp + TempType);
+        city.setText(cityS);
+        country.setText(currCountry);
+        greeting.setText("Доброе утро!");
+        past.setText(stateP + " " + paTemp + " " + TempType + "\n" + "8:00");
+        present.setText(stateP + " " + pTemp + " " + TempType + "\n" + "9:00");
+        future.setText(stateP + " " + fTemp + " " + TempType + "\n" + "10:00");
+        type.setText("Ясно");
+        dayOne.setText(FirstD);
+        d1.setText(stateP + " " + FirstN + " " + TempType);
+        dayTwo.setText(SecondD);
+        d2.setText(stateP + " " + SecondN + " " + TempType);
+        dayThree.setText(ThirdD);
+        d3.setText(stateP + " " +ThridN + " " + TempType);
+    }
+
+    // Тестирую Toast
+    public void onClick(View v) {
+        Toaster("Тост");
+    }
+
+    // Метод создания тостов и логов
+    private void Toaster(String msg) {
+        Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
+        Log.d(LIFECYCLE, msg);
     }
 }

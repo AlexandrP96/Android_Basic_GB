@@ -7,7 +7,6 @@
     <string name="City">Город</string>
     <string name="Country">Страна</string>
     <string name="weather">"0"</string>
-    <string name="test">Рандом</string>
     <string name="textPast">" "</string>
     <string name="textPresent">" "</string>
     <string name="textFuture">" "</string>
@@ -20,4 +19,5 @@
     <string name="d1">" "</string>
     <string name="d2">" "</string>
     <string name="dd3">" "</string>
+    <string name="dodo">дуду</string>
 </resources>

@@ -16,14 +16,8 @@ public class SecondActivity extends AppCompatActivity {
     }
 
     // Тост
-    // выбивает ошибку
     public void add(View view) {
-        Toast.makeText(this, "Добавлено", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Добавлено", Toast.LENGTH_SHORT).show();
     }
 
-    // Возвращаем главное activity
-    // Выбивает ошибку
-    public void back(View view) {
-        setContentView(R.layout.activity_main);
-    }
 }
