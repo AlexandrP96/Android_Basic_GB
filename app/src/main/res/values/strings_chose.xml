@@ -2,7 +2,6 @@
 <resources>
     <string name="EditText"> Enter City</string>
     <string name="AddB">Add</string>
-    <string name="ExitB">Exit</string>
     <string name="Tula">Tula</string>
     <string name="Riga">Riga</string>
     <string name="Saint_Petersburg">Saint Petersburg</string>
