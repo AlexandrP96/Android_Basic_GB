@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="d1">" "</string>
-    <string name="d2">" "</string>
-    <string name="dd3">" "</string>
+    <string name="app_name">WeatherGB</string>
+    <string name="hello">Good Morning!</string>
+    <string name="Button">"?"</string>
+    <string name="button2">"+"</string>
+    <string name="City">City</string>
+    <string name="weather">"0"</string>
+    <string name="textType">" "</string>
+    <string name="Default_bg">Default_bg</string>
+    <string name="dodo">\@string/dodo</string>
 </resources>

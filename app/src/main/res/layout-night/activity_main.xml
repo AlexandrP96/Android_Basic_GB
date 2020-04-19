@@ -11,7 +11,7 @@
         android:layout_width="529dp"
         android:layout_height="891dp"
         android:contentDescription="@string/Default_bg"
-        android:tint="#DC171616"
+        android:tint="#22FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,8 +20,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="0dp"
-        android:layout_height="55dp"
+        android:layout_width="354dp"
+        android:layout_height="44dp"
         android:layout_marginBottom="16dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/textCity"
@@ -35,27 +35,22 @@
             android:id="@+id/buttonAdd"
             android:layout_width="73dp"
             android:layout_height="wrap_content"
-            android:background="#201C1C"
             android:onClick="open"
-            android:text="@string/button2"
-            android:textColor="#D3D3D3" />
+            android:text="@string/button2" />
 
         <TextView
             android:id="@+id/textStatus"
             android:layout_width="200dp"
             android:layout_height="40dp"
             android:text="@string/hello"
-            android:textColor="#D3D3D3"
             android:textSize="20sp" />
 
         <Button
             android:id="@+id/buttonQuestion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#201C1C"
             android:onClick="onClick"
-            android:text="@string/Button"
-            android:textColor="#D3D3D3" />
+            android:text="@string/Button" />
     </LinearLayout>
 
     <TextView
@@ -63,7 +58,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/City"
-        android:textColor="#D3D3D3"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -77,8 +71,6 @@
         android:id="@+id/textCountry"
         android:layout_width="89dp"
         android:layout_height="32dp"
-        android:text="@string/Country"
-        android:textColor="#D3D3D3"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -86,78 +78,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.311" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="236dp"
-        android:layout_height="61dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.588">
-
-        <TextView
-            android:id="@+id/textPast"
-            android:layout_width="79dp"
-            android:layout_height="43dp"
-            android:text="@string/textPast"
-            android:textColor="#D3D3D3" />
-
-        <TextView
-            android:id="@+id/textPresent"
-            android:layout_width="79dp"
-            android:layout_height="43dp"
-            android:layout_marginBottom="18dp"
-            android:text="@string/textPresent"
-            android:textColor="#D3D3D3"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/textFuture"
-            app:layout_constraintStart_toEndOf="@+id/textPast"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textFuture"
-            android:layout_width="79dp"
-            android:layout_height="43dp"
-            android:text="@string/textFuture"
-            android:textColor="#D3D3D3" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="181dp"
-        android:layout_height="109dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.367"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.813">
-
-        <TextView
-            android:id="@+id/dayOne"
-            android:layout_width="247dp"
-            android:layout_height="34dp"
-            android:text="@string/dayOne"
-            android:textColor="#D3D3D3" />
-
-        <TextView
-            android:id="@+id/dayTwo"
-            android:layout_width="247dp"
-            android:layout_height="34dp"
-            android:text="@string/dayTwo"
-            android:textColor="#D3D3D3" />
-
-        <TextView
-            android:id="@+id/dayThree"
-            android:layout_width="247dp"
-            android:layout_height="34dp"
-            android:text="@string/dayThree"
-            android:textColor="#D3D3D3" />
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="91dp"
@@ -174,7 +94,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/weather"
-            android:textColor="#D3D3D3"
             android:textSize="30sp"
             tools:text="+ 15" />
 
@@ -183,42 +102,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/textType"
-            android:textColor="#D3D3D3"
             android:textSize="18sp" />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="66dp"
-        android:layout_height="107dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.771"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.814">
-
-        <TextView
-            android:id="@+id/d1"
-            android:layout_width="match_parent"
-            android:layout_height="32dp"
-            android:text="@string/d1"
-            android:textColor="#D3D3D3" />
-
-        <TextView
-            android:id="@+id/d2"
-            android:layout_width="match_parent"
-            android:layout_height="32dp"
-            android:text="@string/d2"
-            android:textColor="#D3D3D3" />
-
-        <TextView
-            android:id="@+id/d3"
-            android:layout_width="match_parent"
-            android:layout_height="32dp"
-            android:text="@string/dd3"
-            android:textColor="#D3D3D3" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
