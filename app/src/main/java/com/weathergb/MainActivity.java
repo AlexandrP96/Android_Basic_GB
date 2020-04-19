@@ -3,7 +3,7 @@
 * 2 Перевёл данные из кода в values по замечанию из прошлого ДЗ
 * 3 Убрал тосты из всех этапов работы MainActivity
 * 4 Метод pLogick() был упрощен
-* 5
+* 5 Поменял способ создания второго активити на тот что был в уроке
 * 6
  */
 package com.weathergb;
@@ -15,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +31,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Прницип работы кнопки перехода на второе активити из урока
+        Button startAct = findViewById(R.id.buttonAdd);
+        startAct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
+                startActivity(intent);
+            }
+        });
 
         pLogick();
     }
@@ -83,17 +94,12 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
-    // Кнокпа перехода на второй активити
-    public void open(View view) {
-        Intent intent = new Intent("com.weathergb.SecondActivity");
-        startActivity(intent);
-    }
-
     // Логика
     @SuppressLint("SetTextI18n")
     protected void pLogick() {
         TextView cel = findViewById(R.id.textWeather);
         TextView cel2 = findViewById(R.id.PresentTemp);
+
         cel.setText(currTemp + "C");
         cel2.setText(String.valueOf(currTemp));
     }

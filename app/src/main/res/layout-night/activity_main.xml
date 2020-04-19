@@ -68,7 +68,6 @@
         android:layout_width="73dp"
         android:layout_height="wrap_content"
         android:background="#212121"
-        android:onClick="open"
         android:text="@string/button2"
         android:textColor="#C8C8C8"
         app:layout_constraintBottom_toBottomOf="parent"
