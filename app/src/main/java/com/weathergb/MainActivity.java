@@ -4,7 +4,6 @@
 * 3 Убрал тосты из всех этапов работы MainActivity
 * 4 Метод pLogick() был упрощен
 * 5 Поменял способ создания второго активити на тот что был в уроке
-* 6
  */
 package com.weathergb;
 
@@ -27,10 +26,13 @@ public class MainActivity extends AppCompatActivity {
     // Вынес в класс по примеру из урока
     private int currTemp = 10;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        pLogick();
 
         // Прницип работы кнопки перехода на второе активити из урока
         Button startAct = findViewById(R.id.buttonAdd);
@@ -39,10 +41,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
                 startActivity(intent);
+                // Стираем из поля название города чтобы перезаписать новое
+                TextView city = findViewById(R.id.textCity);
+                city.setText("");
+                // Запускаем метод возврата нового города
+                returnCity();
             }
         });
-
-        pLogick();
     }
 
     @Override
@@ -102,6 +107,21 @@ public class MainActivity extends AppCompatActivity {
 
         cel.setText(currTemp + "C");
         cel2.setText(String.valueOf(currTemp));
+    }
+
+    // Логика замены названия города
+    protected void returnCity() {
+        Intent intent = getIntent();
+        Middle mCity = intent.getParcelableExtra("CITY");
+        // Предложение от IDE
+        String ParCity = null;
+        // Условие и выполнение получения нового города
+        // Такое условие предложил сам IDE
+        if (mCity != null) {
+            ParCity = mCity.getCityP();
+        }
+        TextView city = findViewById(R.id.textCity);
+        city.setText(ParCity);
     }
 
     // Тестирую Toast

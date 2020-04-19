@@ -3,7 +3,7 @@
 <string name="hello">Good day!</string>
 <string name="Button">"?"</string>
 <string name="button2">"+"</string>
-<string name="City">Moscow</string>
+<string name="City">"Moscow"</string>
 <string name="weather">"0"</string>
 <string name="textType">" Clear"</string>
 <string name="Default_bg">Default_bg</string>
