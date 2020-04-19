@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
     protected void pLogick() {
         TextView cel = findViewById(R.id.textWeather);
         TextView cel2 = findViewById(R.id.PresentTemp);
-        cel.setText(String.valueOf(currTemp));
+        cel.setText(currTemp + "C");
         cel2.setText(String.valueOf(currTemp));
     }
 
