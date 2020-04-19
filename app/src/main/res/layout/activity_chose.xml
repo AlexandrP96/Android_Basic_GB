@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/ChoseImg"
-        android:layout_width="477dp"
-        android:layout_height="869dp"
+        android:layout_width="435dp"
+        android:layout_height="692dp"
         android:contentDescription="@string/Default_bg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -88,7 +88,6 @@
         android:id="@+id/AddB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="add"
         android:text="@string/AddB"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

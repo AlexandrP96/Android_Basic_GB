@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="EditText">Введите название города</string>
+    <string name="EditText">""</string>
     <string name="AddB">Добавить</string>
     <string name="Tula">Тула</string>
     <string name="Riga">Рига</string>

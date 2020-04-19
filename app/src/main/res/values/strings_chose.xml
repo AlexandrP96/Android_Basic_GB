@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="EditText"> Enter City</string>
+    <string name="EditText">""</string>
     <string name="AddB">Add</string>
     <string name="Tula">Tula</string>
     <string name="Riga">Riga</string>
