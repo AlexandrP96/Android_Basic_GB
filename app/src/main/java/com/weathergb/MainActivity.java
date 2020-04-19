@@ -1,10 +1,10 @@
 /*
-* 1 Перенёс типы данных внутрь метода
-* 2 Перенёс логику в отдельный метод
-* 3 Добавил этапы работы activity из урока
-* 4 Исправил переход на другой экран активити в приложении
-* 5 Добавил Логер из урока во все этапы работы по ДЗ
-* 6 Добавил функционал сохранения данных из урока для currTemp (Температура на данный момент)
+* 1 Исправил работоспособность программы (manifest - android backup)
+* 2 Перевёл данные из кода в values по замечанию из прошлого ДЗ
+* 3 Убрал тосты из всех этапов работы MainActivity
+* 4 Метод pLogick() был упрощен
+* 5
+* 6
  */
 package com.weathergb;
 
@@ -81,7 +81,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Toaster("onDestroy");
     }
 
     // Кнокпа перехода на второй активити
@@ -93,20 +92,10 @@ public class MainActivity extends AppCompatActivity {
     // Логика
     @SuppressLint("SetTextI18n")
     protected void pLogick() {
-        String cityS;
-
-
         TextView cel = findViewById(R.id.textWeather);
-        TextView city = findViewById(R.id.textCity);
-        TextView greeting = findViewById(R.id.textStatus);
-
-        cityS = "Москва";
-
-
+        TextView cel2 = findViewById(R.id.PresentTemp);
         cel.setText(String.valueOf(currTemp));
-        city.setText(cityS);
-
-        greeting.setText("Доброе утро!");
+        cel2.setText(String.valueOf(currTemp));
     }
 
     // Тестирую Toast
