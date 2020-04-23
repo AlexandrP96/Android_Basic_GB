@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="d1">" "</string>
-    <string name="d2">" "</string>
-    <string name="dd3">" "</string>
+    <string name="app_name">WeatherGB</string>
+    <string name="hello">Good day!</string>
+    <string name="Button">"?"</string>
+    <string name="button2">"+"</string>
+    <string name="City">Moscow</string>
+    <string name="weather">"0"</string>
+    <string name="textType">" Clear"</string>
+    <string name="Default_bg">Default_bg</string>
+    <string name="dodo">\@string/dodo</string>
+    <string name="Plus">"+"</string>
+    <string name="Celsius">C</string>
+
+    <string name="PastWT">11.00</string>
+    <string name="PresentWT">12.00</string>
+    <string name="FutureWT">13.00</string>
+
+    <string name="PastTemp">8</string>
+    <string name="PresentTemp">0</string>
+    <string name="FutureTemp">12</string>
+
+    <string name="Monday">Monday</string>
+    <string name="Tuesday">Tuesday</string>
+    <string name="Wednesday">Wednesday</string>
+
+    <string name="DayOneT">+11C</string>
+    <string name="DayTwoT">+10C</string>
+    <string name="DayThreeT">+13C</string>
 </resources>

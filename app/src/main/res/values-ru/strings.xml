@@ -1,23 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">ПогодаГБ</string>
-    <string name="hello">Доброе Утро!</string>
+    <string name="hello">Добрый день!</string>
     <string name="Button">"?"</string>
     <string name="button2">"+"</string>
-    <string name="City">Город</string>
-    <string name="Country">Страна</string>
+    <string name="City">Москва</string>
     <string name="weather">"0"</string>
-    <string name="textPast">" "</string>
-    <string name="textPresent">" "</string>
-    <string name="textFuture">" "</string>
-    <string name="textType">" "</string>
-    <string name="dayOne">Перый</string>
-    <string name="dayTwo">Второй</string>
-    <string name="dayThree">Третий</string>
     <string name="Default_bg">Исходный_зф</string>
-    <string name="cNew_York">Нью Йорк</string>
-    <string name="d1">" "</string>
-    <string name="d2">" "</string>
-    <string name="dd3">" "</string>
     <string name="dodo">дуду</string>
+    <string name="textType">Ясно</string>
+    <string name="Plus">"+"</string>
+    <string name="Celsius">C</string>
+
+    <string name="PastWT">11.00</string>
+    <string name="PresentWT">12.00</string>
+    <string name="FutureWT">13.00</string>
+
+    <string name="PastTemp">8</string>
+    <string name="PresentTemp">0</string>
+    <string name="FutureTemp">12</string>
+
+    <string name="Monday">Понедельник</string>
+    <string name="Tuesday">Вторник</string>
+    <string name="Wednesday">Среда</string>
+
+    <string name="DayOneT">+11C</string>
+    <string name="DayTwoT">+10C</string>
+    <string name="DayThreeT">+13C</string>
 </resources>
