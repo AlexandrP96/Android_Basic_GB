@@ -1,13 +1,13 @@
 <resources>
-<string name="app_name">WeatherGB</string>
-<string name="hello">Good day!</string>
-<string name="Button">"?"</string>
-<string name="button2">"+"</string>
-<string name="City">"Moscow"</string>
-<string name="weather">"0"</string>
-<string name="textType">" Clear"</string>
-<string name="Default_bg">Default_bg</string>
-<string name="dodo">\@string/dodo</string>
+    <string name="app_name">WeatherGB</string>
+    <string name="hello">Good day!</string>
+    <string name="Button">"?"</string>
+    <string name="button2">"+"</string>
+    <string name="City">"Moscow"</string>
+    <string name="weather">"0"</string>
+    <string name="textType">" Clear"</string>
+    <string name="Default_bg">Default_bg</string>
+    <string name="dodo">\@string/dodo</string>
 
     <string name="Plus">"+"</string>
     <string name="Celsius">C</string>
@@ -27,4 +27,7 @@
     <string name="DayOneT">+11C</string>
     <string name="DayTwoT">+10C</string>
     <string name="DayThreeT">+13C</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
 </resources>

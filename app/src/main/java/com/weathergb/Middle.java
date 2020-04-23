@@ -19,6 +19,7 @@ public class Middle implements Parcelable {
     }
 
     public static final Creator<Middle> CREATOR = new Creator<Middle>() {
+
         @Override
         public Middle createFromParcel(Parcel in) {
             return new Middle(in);
