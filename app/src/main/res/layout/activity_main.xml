@@ -257,14 +257,6 @@
                 android:text="@string/DayThreeT"
                 android:textStyle="bold" />
         </LinearLayout>
-
-
-        <FrameLayout
-            android:layout_width="match_parent" android:layout_height="match_parent">
-            <fragment android:name="com.weathergb.CitiesFragment"
-                android:id="@+id/cities"
-                android:layout_width="match_parent" android:layout_height="match_parent" />
-        </FrameLayout>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
