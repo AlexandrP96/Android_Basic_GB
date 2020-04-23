@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/Default_bg"
-        android:layout_width="492dp"
-        android:layout_height="672dp"
+        android:layout_width="480dp"
+        android:layout_height="740dp"
         android:contentDescription="@string/Default_bg"
         android:tint="#22FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"

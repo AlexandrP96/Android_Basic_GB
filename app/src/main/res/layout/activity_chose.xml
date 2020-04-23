@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/ChoseImg"
-        android:layout_width="435dp"
-        android:layout_height="692dp"
+        android:layout_width="497dp"
+        android:layout_height="886dp"
         android:contentDescription="@string/Default_bg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -8,15 +8,15 @@
 
     <ImageView
         android:id="@+id/Default_bg"
-        android:layout_width="557dp"
-        android:layout_height="758dp"
+        android:layout_width="827dp"
+        android:layout_height="497dp"
         android:contentDescription="@string/Default_bg"
         android:tint="#BE101010"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/default_cloudy_blur" />
+        app:srcCompat="@drawable/land_cloudy_blur" />
 
     <TextView
         android:id="@+id/textCity"
@@ -28,15 +28,15 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.567"
+        app:layout_constraintHorizontal_bias="0.549"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.246"
+        app:layout_constraintVertical_bias="0.225"
         tools:text="@string/City" />
 
     <TextView
         android:id="@+id/textStatus"
-        android:layout_width="108dp"
+        android:layout_width="155dp"
         android:layout_height="37dp"
         android:text="@string/hello"
         android:textColor="#C8C8C8"
@@ -44,9 +44,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.55"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.091" />
+        app:layout_constraintVertical_bias="0.09" />
 
     <Button
         android:id="@+id/buttonQuestion"
@@ -58,10 +59,10 @@
         android:textColor="#C8C8C8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.944"
+        app:layout_constraintHorizontal_bias="0.779"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.092" />
+        app:layout_constraintVertical_bias="0.093" />
 
     <Button
         android:id="@+id/buttonAdd"
@@ -72,10 +73,10 @@
         android:textColor="#C8C8C8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintHorizontal_bias="0.258"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.092" />
+        app:layout_constraintVertical_bias="0.093" />
 
     <TextView
         android:id="@+id/textType"
@@ -87,22 +88,22 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintHorizontal_bias="0.541"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.402" />
+        app:layout_constraintVertical_bias="0.477" />
 
     <LinearLayout
         android:id="@+id/CurrentTemp"
-        android:layout_width="87dp"
-        android:layout_height="47dp"
+        android:layout_width="93dp"
+        android:layout_height="50dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.464"
+        app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.327">
+        app:layout_constraintVertical_bias="0.357">
 
         <TextView
             android:id="@+id/textView"
@@ -129,13 +130,15 @@
 
     <LinearLayout
         android:id="@+id/TimeDay"
-        android:layout_width="268dp"
+        android:layout_width="297dp"
         android:layout_height="44dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.534"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.634">
 
         <LinearLayout
             android:id="@+id/HoursTemp"
@@ -208,14 +211,15 @@
 
     <LinearLayout
         android:id="@+id/FutureDays"
-        android:layout_width="268dp"
+        android:layout_width="297dp"
         android:layout_height="70dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="@+id/Default_bg"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.576"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.664">
+        app:layout_constraintVertical_bias="0.719">
 
         <LinearLayout
             android:id="@+id/FDaysLayout"

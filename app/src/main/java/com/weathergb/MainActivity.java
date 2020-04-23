@@ -1,10 +1,3 @@
-/*
-* 1 Исправил работоспособность программы (manifest - android backup)
-* 2 Перевёл данные из кода в values по замечанию из прошлого ДЗ
-* 3 Убрал тосты из всех этапов работы MainActivity
-* 4 Метод pLogick() был упрощен
-* 5 Поменял способ создания второго активити на тот что был в уроке
- */
 package com.weathergb;
 
 import android.annotation.SuppressLint;
@@ -20,7 +13,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String LIFECYCLE = "LIFE_CYCLE";
+    // Констната Лога
+    private static final String LOG = "Activity";
     private static final String TEMPS = "TEMP_S";
     // Температура на данный момент
     // Вынес в класс по примеру из урока
@@ -48,12 +42,16 @@ public class MainActivity extends AppCompatActivity {
                 returnCity();
             }
         });
+
+        Log.i(LOG,"onCreate");
     }
+
 
     @Override
     protected void onStart() {
         super.onStart();
     }
+
 
     // Возвращаемся
     @Override
@@ -61,11 +59,13 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
     }
 
+
     // Пауза
     @Override
     protected void onPause() {
         super.onPause();
     }
+
 
     // Перезапуск
     @Override
@@ -73,19 +73,26 @@ public class MainActivity extends AppCompatActivity {
         super.onRestart();
     }
 
+
     // Восстановление
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         currTemp = savedInstanceState.getInt(TEMPS);
+
+        Log.i(LOG,"RestoreInstance");
     }
+
 
     // Сохранение данных
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putInt(TEMPS, currTemp);
+
+        Log.i(LOG,"SaveInstance");
     }
+
 
     // Остановка
     @Override
@@ -93,11 +100,13 @@ public class MainActivity extends AppCompatActivity {
         super.onStop();
     }
 
+
     // Смэрть
     @Override
     protected void onDestroy() {
         super.onDestroy();
     }
+
 
     // Логика
     @SuppressLint("SetTextI18n")
@@ -107,7 +116,10 @@ public class MainActivity extends AppCompatActivity {
 
         cel.setText(currTemp + "C");
         cel2.setText(String.valueOf(currTemp));
+
+        Log.i(LOG,"AppLogic");
     }
+
 
     // Логика замены названия города
     protected void returnCity() {
@@ -122,16 +134,16 @@ public class MainActivity extends AppCompatActivity {
         }
         TextView city = findViewById(R.id.textCity);
         city.setText(ParCity);
+
+        Log.i(LOG,"returnCity");
     }
+
 
     // Тестирую Toast
     public void onClick(View v) {
-        Toaster("Тост");
+        Toast.makeText(getApplicationContext(), "Работает", Toast.LENGTH_SHORT).show();
+
+        Log.i(LOG,"ToastButton");
     }
 
-    // Метод создания тостов и логов
-    private void Toaster(String msg) {
-        Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
-        Log.d(LIFECYCLE, msg);
-    }
 }
