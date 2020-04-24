@@ -27,4 +27,5 @@
     <string name="DayOneT">+11C</string>
     <string name="DayTwoT">+10C</string>
     <string name="DayThreeT">+13C</string>
+    <string name="ButtonChose">Add</string>
 </resources>

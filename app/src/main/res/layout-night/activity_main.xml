@@ -1,108 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/MainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/dark_background"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/Default_bg"
-        android:layout_width="557dp"
-        android:layout_height="758dp"
-        android:contentDescription="@string/Default_bg"
-        android:tint="#BE101010"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/default_cloudy_blur" />
-
-    <TextView
-        android:id="@+id/textCity"
-        android:layout_width="154dp"
-        android:layout_height="47dp"
-        android:text="@string/City"
-        android:textColor="#C8C8C8"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.567"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.246"
-        tools:text="@string/City" />
-
-    <TextView
-        android:id="@+id/textStatus"
-        android:layout_width="108dp"
-        android:layout_height="37dp"
-        android:text="@string/hello"
-        android:textColor="#C8C8C8"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.091" />
-
-    <Button
-        android:id="@+id/buttonQuestion"
-        android:layout_width="73dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#212121"
-        android:onClick="onClick"
-        android:text="@string/Button"
-        android:textColor="#C8C8C8"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.944"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.092" />
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/buttonAdd"
-        android:layout_width="73dp"
-        android:layout_height="wrap_content"
-        android:background="#212121"
-        android:text="@string/button2"
-        android:textColor="#C8C8C8"
+        <Button
+            android:id="@+id/buttonAdd"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:background="#484848"
+            android:onClick="onClick"
+            android:text="@string/button2"
+            android:textColor="#ABABAB"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.055"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.092" />
+
+        <TextView
+            android:id="@+id/textStatus"
+            android:layout_width="250dp"
+            android:layout_height="37dp"
+            android:text="@string/hello"
+            android:textColor="#ABABAB"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.089" />
+
+        <Button
+            android:id="@+id/buttonQuestion"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:background="#484848"
+            android:onClick="openList"
+            android:text="@string/Button"
+            android:textColor="#ABABAB"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.944"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.092" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/FragmentContainer"
+        android:layout_width="142dp"
+        android:layout_height="52dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.055"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.092" />
+        app:layout_constraintVertical_bias="0.187" />
 
     <TextView
         android:id="@+id/textType"
-        android:layout_width="88dp"
+        android:layout_width="83dp"
         android:layout_height="36dp"
+        android:layout_gravity="center"
         android:text="@string/textType"
-        android:textColor="#C8C8C8"
+        android:textColor="#ABABAB"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.402" />
+        app:layout_constraintVertical_bias="0.397" />
 
     <LinearLayout
         android:id="@+id/CurrentTemp"
         android:layout_width="87dp"
         android:layout_height="47dp"
+        android:layout_gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.464"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.327">
+        app:layout_constraintVertical_bias="0.325">
 
         <TextView
             android:id="@+id/textView"
@@ -110,7 +106,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/Plus"
-            android:textColor="#C8C8C8"
+            android:textColor="#ABABAB"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -120,7 +116,7 @@
             android:layout_height="40dp"
             android:layout_weight="1"
             android:text="@string/weather"
-            android:textColor="#C8C8C8"
+            android:textColor="#ABABAB"
             android:textSize="30sp"
             android:textStyle="bold"
             tools:text="0" />
@@ -131,6 +127,7 @@
         android:id="@+id/TimeDay"
         android:layout_width="268dp"
         android:layout_height="44dp"
+        android:layout_gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -149,7 +146,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/PastWT"
-                android:textColor="#C8C8C8"
+                android:textColor="#ABABAB"
                 android:textStyle="bold" />
 
             <TextView
@@ -158,7 +155,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/PresentWT"
-                android:textColor="#C8C8C8"
+                android:textColor="#ABABAB"
                 android:textStyle="bold" />
 
             <TextView
@@ -167,7 +164,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/FutureWT"
-                android:textColor="#C8C8C8"
+                android:textColor="#ABABAB"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -183,7 +180,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/PastTemp"
-                android:textColor="#C8C8C8"
+                android:textColor="#ABABAB"
                 android:textStyle="bold" />
 
             <TextView
@@ -192,7 +189,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/PresentTemp"
-                android:textColor="#C8C8C8"
+                android:textColor="#ABABAB"
                 android:textStyle="bold" />
 
             <TextView
@@ -201,16 +198,20 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/FutureTemp"
-                android:textColor="#C8C8C8"
+                android:textColor="#ABABAB"
                 android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/FutureDays"
-        android:layout_width="268dp"
-        android:layout_height="70dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:orientation="horizontal"
+        android:paddingStart="70dp"
+        android:paddingLeft="70dp"
+        android:paddingRight="70dp"
         app:layout_constraintBottom_toBottomOf="@+id/Default_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -228,7 +229,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/Monday"
-                android:textColor="#C8C8C8"
+                android:textColor="#ABABAB"
                 android:textStyle="bold" />
 
             <TextView
@@ -236,7 +237,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/Tuesday"
-                android:textColor="#C8C8C8"
+                android:textColor="#ABABAB"
                 android:textStyle="bold" />
 
             <TextView
@@ -244,7 +245,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/Wednesday"
-                android:textColor="#C8C8C8"
+                android:textColor="#ABABAB"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -259,7 +260,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/DayOneT"
-                android:textColor="#C8C8C8"
+                android:textColor="#ABABAB"
                 android:textStyle="bold" />
 
             <TextView
@@ -267,7 +268,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/DayTwoT"
-                android:textColor="#C8C8C8"
+                android:textColor="#ABABAB"
                 android:textStyle="bold" />
 
             <TextView
@@ -275,9 +276,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/DayThreeT"
-                android:textColor="#C8C8C8"
+                android:textColor="#ABABAB"
                 android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <FrameLayout
+        android:id="@+id/ChoseCity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp">
+
+    </FrameLayout>
+
+</LinearLayout>

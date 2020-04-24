@@ -15,12 +15,14 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+
     // Констната Лога
     private static final String LOG = "Activity";
     private static final String TEMPS = "TEMP_S";
     // Температура на данный момент
     // Вынес в класс по примеру из урока
     private int currTemp = 10;
+
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -94,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    // Логика
+    // Логика установки температуры
     @SuppressLint("SetTextI18n")
     protected void pLogick() {
         TextView cel = findViewById(R.id.textWeather);
@@ -103,12 +105,23 @@ public class MainActivity extends AppCompatActivity {
         cel.setText(currTemp + "C");
         cel2.setText(String.valueOf(currTemp));
 
+        // Устанавливаем дефолтный фрагмент (Временное)
+        DefaultFragment fragmentD = new DefaultFragment();
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.FragmentContainer, fragmentD);
+        fragmentTransaction.addToBackStack("");
+        fragmentTransaction.commit();
+
+        Log.i(LOG,"DefaultCity");
         Log.i(LOG,"AppLogic");
     }
 
-    // Тестирую Toast
+
+    // Кнопка замены фрагмента
     public void onClick(View v) {
         TestFragment fragmentT = new TestFragment();
+        // new ListenerOnReplace(fragmentT);
+        // Логика из урока
         Button add1 = findViewById(R.id.buttonAdd);
         add1.setOnClickListener(new ListenerOnReplace(fragmentT));
         Toast.makeText(getApplicationContext(), "Фрагмент", Toast.LENGTH_SHORT).show();
@@ -116,6 +129,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    // Кнопка добавления фрагмента списка городов
+    public void openList(View view) {
+        ChoseCity cityFragment = new ChoseCity();
+        Button open = findViewById(R.id.buttonQuestion);
+        open.setOnClickListener(new ListenerOnAdd(cityFragment));
+        Log.i(LOG,"openList");
+    }
+
+
+    // Конструктор из программы первого урока
     class ListenerOnReplace implements View.OnClickListener {
 
          Fragment fragment;
@@ -136,7 +159,32 @@ public class MainActivity extends AppCompatActivity {
             fragmentTransaction.replace(R.id.FragmentContainer, fragmentT);
             fragmentTransaction.addToBackStack("");
             fragmentTransaction.commit();
+
             Log.i(LOG,"replaceCity");
+        }
+    }
+
+
+    // Конструктор из урока
+    class ListenerOnAdd implements View.OnClickListener {
+
+        Fragment fragment;
+
+        ListenerOnAdd(Fragment fragment) {
+            this.fragment = fragment;
+        }
+
+        @Override
+        public void onClick(View v) {
+            addFragment();
+        }
+
+        private void addFragment() {
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.add(R.id.ChoseCity, fragment);
+            fragmentTransaction.addToBackStack("");
+            fragmentTransaction.commit();
+            Log.i(LOG,"addCityList");
         }
     }
 }
