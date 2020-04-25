@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Tokyo">"Tokyo"</string>
+    <string name="New_York">"New_York"</string>
+    <string name="Tallin">"Tallin"</string>
+    <string name="Odessa">"Odessa"</string>
+    <string name="Kiev">"Kiev"</string>
+    <string name="Berlin">"Berlin"</string>
+    <string name="London">"London"</string>
+    <string name="Omsk">"Omsk"</string>
+</resources>

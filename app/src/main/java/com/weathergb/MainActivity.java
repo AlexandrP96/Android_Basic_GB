@@ -1,16 +1,11 @@
-/*
-* 1 Исправил работоспособность программы (manifest - android backup)
-* 2 Перевёл данные из кода в values по замечанию из прошлого ДЗ
-* 3 Убрал тосты из всех этапов работы MainActivity
-* 4 Метод pLogick() был упрощен
-* 5 Поменял способ создания второго активити на тот что был в уроке
- */
 package com.weathergb;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -20,11 +15,14 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String LIFECYCLE = "LIFE_CYCLE";
+
+    // Констната Лога
+    private static final String LOG = "Activity";
     private static final String TEMPS = "TEMP_S";
     // Температура на данный момент
     // Вынес в класс по примеру из урока
     private int currTemp = 10;
+
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -33,27 +31,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         pLogick();
-
-        // Прницип работы кнопки перехода на второе активити из урока
-        Button startAct = findViewById(R.id.buttonAdd);
-        startAct.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
-                startActivity(intent);
-                // Стираем из поля название города чтобы перезаписать новое
-                TextView city = findViewById(R.id.textCity);
-                city.setText("");
-                // Запускаем метод возврата нового города
-                returnCity();
-            }
-        });
+        Log.i(LOG,"onCreate");
     }
+
 
     @Override
     protected void onStart() {
         super.onStart();
     }
+
 
     // Возвращаемся
     @Override
@@ -61,11 +47,13 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
     }
 
+
     // Пауза
     @Override
     protected void onPause() {
         super.onPause();
     }
+
 
     // Перезапуск
     @Override
@@ -73,19 +61,26 @@ public class MainActivity extends AppCompatActivity {
         super.onRestart();
     }
 
+
     // Восстановление
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         currTemp = savedInstanceState.getInt(TEMPS);
+
+        Log.i(LOG,"RestoreInstance");
     }
+
 
     // Сохранение данных
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putInt(TEMPS, currTemp);
+
+        Log.i(LOG,"SaveInstance");
     }
+
 
     // Остановка
     @Override
@@ -93,13 +88,15 @@ public class MainActivity extends AppCompatActivity {
         super.onStop();
     }
 
+
     // Смэрть
     @Override
     protected void onDestroy() {
         super.onDestroy();
     }
 
-    // Логика
+
+    // Логика установки температуры
     @SuppressLint("SetTextI18n")
     protected void pLogick() {
         TextView cel = findViewById(R.id.textWeather);
@@ -107,31 +104,87 @@ public class MainActivity extends AppCompatActivity {
 
         cel.setText(currTemp + "C");
         cel2.setText(String.valueOf(currTemp));
+
+        // Устанавливаем дефолтный фрагмент (Временное)
+        DefaultFragment fragmentD = new DefaultFragment();
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.FragmentContainer, fragmentD);
+        fragmentTransaction.addToBackStack("");
+        fragmentTransaction.commit();
+
+        Log.i(LOG,"DefaultCity");
+        Log.i(LOG,"AppLogic");
     }
 
-    // Логика замены названия города
-    protected void returnCity() {
-        Intent intent = getIntent();
-        Middle mCity = intent.getParcelableExtra("CITY");
-        // Предложение от IDE
-        String ParCity = null;
-        // Условие и выполнение получения нового города
-        // Такое условие предложил сам IDE
-        if (mCity != null) {
-            ParCity = mCity.getCityP();
-        }
-        TextView city = findViewById(R.id.textCity);
-        city.setText(ParCity);
-    }
 
-    // Тестирую Toast
+    // Кнопка замены фрагмента
     public void onClick(View v) {
-        Toaster("Тост");
+        TestFragment fragmentT = new TestFragment();
+        // new ListenerOnReplace(fragmentT);
+        // Логика из урока
+        Button add1 = findViewById(R.id.buttonAdd);
+        add1.setOnClickListener(new ListenerOnReplace(fragmentT));
+        Toast.makeText(getApplicationContext(), "Фрагмент", Toast.LENGTH_SHORT).show();
+        Log.i(LOG,"onClick");
     }
 
-    // Метод создания тостов и логов
-    private void Toaster(String msg) {
-        Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
-        Log.d(LIFECYCLE, msg);
+
+    // Кнопка добавления фрагмента списка городов
+    public void openList(View view) {
+        ChoseCity cityFragment = new ChoseCity();
+        Button open = findViewById(R.id.buttonQuestion);
+        open.setOnClickListener(new ListenerOnAdd(cityFragment));
+        Log.i(LOG,"openList");
+    }
+
+
+    // Конструктор из программы первого урока
+    class ListenerOnReplace implements View.OnClickListener {
+
+         Fragment fragment;
+
+        ListenerOnReplace(Fragment fragment) {
+           this.fragment = fragment;
+        }
+
+        @Override
+        public void onClick(View v) {
+            replaceFragment();
+        }
+
+        // Заменить фрагмент
+        private void replaceFragment() {
+            TestFragment fragmentT = new TestFragment();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.FragmentContainer, fragmentT);
+            fragmentTransaction.addToBackStack("");
+            fragmentTransaction.commit();
+
+            Log.i(LOG,"replaceCity");
+        }
+    }
+
+
+    // Конструктор из урока
+    class ListenerOnAdd implements View.OnClickListener {
+
+        Fragment fragment;
+
+        ListenerOnAdd(Fragment fragment) {
+            this.fragment = fragment;
+        }
+
+        @Override
+        public void onClick(View v) {
+            addFragment();
+        }
+
+        private void addFragment() {
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.add(R.id.ChoseCity, fragment);
+            fragmentTransaction.addToBackStack("");
+            fragmentTransaction.commit();
+            Log.i(LOG,"addCityList");
+        }
     }
 }

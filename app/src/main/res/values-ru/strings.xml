@@ -27,4 +27,15 @@
     <string name="DayOneT">+11C</string>
     <string name="DayTwoT">+10C</string>
     <string name="DayThreeT">+13C</string>
+
+    <string name="Tokyo">"Токио"</string>
+    <string name="New_York">"Нью Йорк"</string>
+    <string name="Tallin">"Таллин"</string>
+    <string name="Odessa">"Одесса"</string>
+    <string name="Kiev">"Киев"</string>
+    <string name="Berlin">"Берлин"</string>
+    <string name="London">"Лондон"</string>
+    <string name="Omsk">"Омск"</string>
+
+    <string name="ButtonChose">Добавить</string>
 </resources>
