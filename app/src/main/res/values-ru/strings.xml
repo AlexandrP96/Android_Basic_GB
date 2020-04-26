@@ -38,4 +38,7 @@
     <string name="Omsk">"Омск"</string>
 
     <string name="ButtonChose">Добавить</string>
+    <string name="Enter">Введите ваш город:</string>
+    <string name="ParcelText">""</string>
+    <string name="AddButton">Добавить</string>
 </resources>
