@@ -37,4 +37,5 @@
     <string name="Enter">Введите ваш город:</string>
     <string name="ParcelText">""</string>
     <string name="AddButton">Добавить</string>
+    <string name="DefaultTemp">10</string>
 </resources>

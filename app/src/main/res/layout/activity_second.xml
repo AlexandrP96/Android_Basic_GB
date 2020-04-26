@@ -4,9 +4,9 @@
     android:id="@+id/SecondLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/default_chose_blur"
+    android:background="@drawable/newcb"
     android:orientation="vertical"
-    tools:context=".SecondActivity" >
+    tools:context=".SecondActivity">
 
     <TextView
         android:id="@+id/EnterView"

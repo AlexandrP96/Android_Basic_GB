@@ -27,4 +27,5 @@
     <string name="Enter">Enter your City:</string>
     <string name="ParcelText">""</string>
     <string name="AddButton">Add</string>
+    <string name="DefaultTemp">10</string>
 </resources>

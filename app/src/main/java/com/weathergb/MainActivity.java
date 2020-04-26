@@ -15,6 +15,8 @@ import android.widget.TextView;
 // Убрал из приложения неиспользуемые этапы Activity (onRestart и тд)
 // Добавил в activity_main фрагмент со списком темературы на неделю - DaysF()
 // Добавил в values два списка eng/ru дней недели
+// Убрал элемент интерфейса main_activity FutureDays
+// Изменил дизайн программы, заменил шрифты, цвет слов
 
 public class MainActivity extends AppCompatActivity implements Constants {
 
@@ -75,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements Constants {
         TextView cel = findViewById(R.id.textWeather);
         TextView cel2 = findViewById(R.id.PresentTemp);
 
-        cel.setText(currTemp + "C");
+        cel.setText(currTemp + " C");
         cel2.setText(String.valueOf(currTemp));
 
         Log.i(LOG,"AppLogic");
