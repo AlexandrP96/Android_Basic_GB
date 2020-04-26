@@ -5,267 +5,223 @@
     android:id="@+id/MainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/default_cloudy_blur"
-    android:orientation="vertical"
+    android:background="@drawable/newbfl"
+    android:orientation="horizontal"
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:id="@+id/HelloLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/buttonAdd"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:onClick="onClick"
-            android:text="@string/button2"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.055"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.092" />
-
-        <TextView
-            android:id="@+id/textStatus"
-            android:layout_width="250dp"
-            android:layout_height="37dp"
-            android:text="@string/hello"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.089" />
-
-        <Button
-            android:id="@+id/buttonQuestion"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:onClick="onClick"
-            android:text="@string/Button"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.944"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.092" />
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/currentCityV"
+        android:id="@+id/InfoLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/City"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textType"
-        android:layout_width="83dp"
-        android:layout_height="36dp"
-        android:layout_gravity="center"
-        android:text="@string/textType"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.397" />
+        <LinearLayout
+            android:id="@+id/HelloLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp">
 
-    <LinearLayout
-        android:id="@+id/CurrentTemp"
-        android:layout_width="87dp"
-        android:layout_height="47dp"
-        android:layout_gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.325">
+            <Button
+                android:id="@+id/buttonAdd"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:background="#9203A9F4"
+                android:onClick="onClick"
+                android:text="@string/button2"
+                android:textColor="#000000"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.055"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.092" />
+
+            <TextView
+                android:id="@+id/textStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"
+                android:text="@string/hello"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.089" />
+
+        </LinearLayout>
 
         <TextView
-            android:id="@+id/textView"
-            android:layout_width="0dp"
+            android:id="@+id/currentCityV"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/Plus"
+            android:layout_gravity="center"
+            android:paddingTop="30dp"
+            android:text="@string/City"
+            android:textColor="#000000"
             android:textSize="30sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textWeather"
-            android:layout_width="50dp"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:text="@string/weather"
-            android:textSize="30sp"
+            android:id="@+id/textType"
+            android:layout_width="83dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/textType"
+            android:textColor="#000000"
+            android:textSize="24sp"
             android:textStyle="bold"
-            tools:text="0" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/TimeDay"
-        android:layout_width="268dp"
-        android:layout_height="44dp"
-        android:layout_gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.397" />
 
         <LinearLayout
-            android:id="@+id/HoursTemp"
-            android:layout_width="319dp"
-            android:layout_height="20dp"
-            android:orientation="horizontal">
+            android:id="@+id/CurrentTemp"
+            android:layout_width="87dp"
+            android:layout_height="47dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.325">
 
             <TextView
-                android:id="@+id/PastWT"
-                android:layout_width="1dp"
+                android:id="@+id/textView"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/PastWT"
+                android:text="@string/Plus"
+                android:textColor="#000000"
+                android:textSize="30sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/PresentWT"
-                android:layout_width="1dp"
-                android:layout_height="wrap_content"
+                android:id="@+id/textWeather"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
                 android:layout_weight="1"
-                android:text="@string/PresentWT"
-                android:textStyle="bold" />
+                android:text="@string/weather"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                tools:text="0" />
 
-            <TextView
-                android:id="@+id/FutureWT"
-                android:layout_width="10dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/FutureWT"
-                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/HoursTemp2"
-            android:layout_width="319dp"
-            android:layout_height="20dp"
-            android:orientation="horizontal">
+            android:id="@+id/TimeDay"
+            android:layout_width="267dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/PastTemp"
-                android:layout_width="1dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/PastTemp"
-                android:textStyle="bold" />
+            <LinearLayout
+                android:id="@+id/HoursTemp"
+                android:layout_width="319dp"
+                android:layout_height="20dp"
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/PresentTemp"
-                android:layout_width="1dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/PresentTemp"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/PastWT"
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/PastWT"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/FutureTemp"
-                android:layout_width="10dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/FutureTemp"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/PresentWT"
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/PresentWT"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/FutureWT"
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/FutureWT"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/HoursTemp2"
+                android:layout_width="319dp"
+                android:layout_height="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/PastTemp"
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/PastTemp"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/PresentTemp"
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/PresentTemp"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/FutureTemp"
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/FutureTemp"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+            </LinearLayout>
         </LinearLayout>
+
     </LinearLayout>
 
+
     <LinearLayout
-        android:id="@+id/FutureDays"
+        android:id="@+id/FragmentLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:orientation="horizontal"
-        android:paddingStart="70dp"
-        android:paddingLeft="70dp"
-        android:paddingRight="70dp"
-        app:layout_constraintBottom_toBottomOf="@+id/Default_bg"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.664">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <LinearLayout
-            android:id="@+id/FDaysLayout"
-            android:layout_width="200dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+        <FrameLayout
+            android:id="@+id/DaysFragment"
+            android:layout_width="315dp"
+            android:layout_height="252dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:background="#4F03A9F4">
 
-            <TextView
-                android:id="@+id/DayOne"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/Monday"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/DayTwo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/Tuesday"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/DayThree"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/Wednesday"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/FTempsLayout"
-            android:layout_width="65dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/DayOneT"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/DayOneT"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/DayTwoT"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/DayTwoT"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/DayThreeT"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/DayThreeT"
-                android:textStyle="bold" />
-        </LinearLayout>
+        </FrameLayout>
     </LinearLayout>
-
-    <FrameLayout
-        android:id="@+id/DaysFragment"
-        android:layout_width="270dp"
-        android:layout_height="244dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp">
-
-    </FrameLayout>
 
 </LinearLayout>
+

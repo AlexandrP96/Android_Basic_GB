@@ -20,7 +20,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="@string/Monday"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:textSize="24sp"
             android:textStyle="bold"
             tools:text="@string/Monday" />
@@ -30,7 +30,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="@string/Tuesday"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -39,7 +39,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="@string/Wednesday"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -48,7 +48,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="@string/Thursday"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -57,7 +57,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="@string/Friday"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -66,7 +66,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="@string/Saturday"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -75,7 +75,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="@string/Sunday"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:textSize="24sp"
             android:textStyle="bold" />
     </LinearLayout>
@@ -91,7 +91,7 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="@string/DefaultTemp"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -100,7 +100,7 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="@string/DefaultTemp"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -109,7 +109,7 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="@string/DefaultTemp"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -118,7 +118,7 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="@string/DefaultTemp"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -127,7 +127,7 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="@string/DefaultTemp"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -136,7 +136,7 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="@string/DefaultTemp"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -145,7 +145,7 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="@string/DefaultTemp"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:textSize="24sp"
             android:textStyle="bold" />
     </LinearLayout>

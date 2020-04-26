@@ -11,13 +11,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-// Добавил SecondActivity с адекватным парселем
-// Убрал из приложения неиспользуемые этапы Activity (onRestart и тд)
-// Добавил в activity_main фрагмент со списком темературы на неделю - DaysF()
-// Добавил в values два списка eng/ru дней недели
-// Убрал элемент интерфейса main_activity FutureDays
-// Изменил дизайн программы, заменил шрифты, цвет слов
-
 public class MainActivity extends AppCompatActivity implements Constants {
 
     // Констната Лога
@@ -37,8 +30,8 @@ public class MainActivity extends AppCompatActivity implements Constants {
         TextView currentCity = findViewById(R.id.currentCityV);
         Parcel parcel = (Parcel) getIntent().getSerializableExtra(PARCEL);
         // Объект City (Дефолтный город для отображения при запуске)
-        String City = "London";
-        // Условие при запуске приложения для parcel
+        String City = "Paris";
+        // Условие для parcel при запуске приложения
         if (parcel == null) {
             currentCity.setText(City);
         } else {
@@ -78,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements Constants {
         TextView cel2 = findViewById(R.id.PresentTemp);
 
         cel.setText(currTemp + " C");
-        cel2.setText(String.valueOf(currTemp));
+        cel2.setText("+ " + currTemp + "C");
 
         Log.i(LOG,"AppLogic");
     }
@@ -101,7 +94,6 @@ public class MainActivity extends AppCompatActivity implements Constants {
         Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
         startActivity(intent);
 
-        // Toast.makeText(getApplicationContext(), "Фрагмент", Toast.LENGTH_SHORT).show();
         Log.i(LOG,"OpenSecondActivity");
     }
 }

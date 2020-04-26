@@ -33,4 +33,82 @@
         android:layout_height="wrap_content"
         android:onClick="AddButton"
         android:text="@string/AddButton" />
+
+    <TextView
+        android:id="@+id/PopularText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="30dp"
+        android:text="@string/Popular"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:layout_width="278dp"
+        android:layout_height="175dp"
+        android:layout_gravity="center"
+        android:paddingTop="50dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/CityOne"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/London"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/CityTwo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Berlin"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/CityThree"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Odessa"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/CityFour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Tallin"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/CityFive"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Omsk"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/CitySix"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/New_York"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+
 </LinearLayout>
