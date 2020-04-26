@@ -3,21 +3,18 @@ package com.weathergb;
 import android.annotation.SuppressLint;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import org.w3c.dom.Text;
-
-// Добавил SecondActivity с адекватным парселем 
-
+// Добавил SecondActivity с адекватным парселем
+// Убрал из приложения неиспользуемые этапы Activity (onRestart и тд)
+// Добавил в activity_main фрагмент со списком темературы на неделю - DaysF()
+// Добавил в values два списка eng/ru дней недели
 
 public class MainActivity extends AppCompatActivity implements Constants {
 
@@ -37,42 +34,18 @@ public class MainActivity extends AppCompatActivity implements Constants {
 
         TextView currentCity = findViewById(R.id.currentCityV);
         Parcel parcel = (Parcel) getIntent().getSerializableExtra(PARCEL);
-
+        // Объект City (Дефолтный город для отображения при запуске)
+        String City = "London";
+        // Условие при запуске приложения для parcel
         if (parcel == null) {
-            currentCity.setText("Default");
+            currentCity.setText(City);
         } else {
             currentCity.setText(parcel.currentCity);
         }
 
-        pLogick();
+        appTemp();
+        DaysF();
         Log.i(LOG,"onCreate");
-    }
-
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-    }
-
-
-    // Возвращаемся
-    @Override
-    protected void onResume() {
-        super.onResume();
-    }
-
-
-    // Пауза
-    @Override
-    protected void onPause() {
-        super.onPause();
-    }
-
-
-    // Перезапуск
-    @Override
-    protected void onRestart() {
-        super.onRestart();
     }
 
 
@@ -96,23 +69,9 @@ public class MainActivity extends AppCompatActivity implements Constants {
     }
 
 
-    // Остановка
-    @Override
-    protected void onStop() {
-        super.onStop();
-    }
-
-
-    // Смэрть
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
-
-
     // Логика установки температуры
     @SuppressLint("SetTextI18n")
-    protected void pLogick() {
+    protected void appTemp() {
         TextView cel = findViewById(R.id.textWeather);
         TextView cel2 = findViewById(R.id.PresentTemp);
 
@@ -120,6 +79,17 @@ public class MainActivity extends AppCompatActivity implements Constants {
         cel2.setText(String.valueOf(currTemp));
 
         Log.i(LOG,"AppLogic");
+    }
+
+
+    // Фрагмент с температурой по дням
+    protected void DaysF() {
+        DaysFragment days = new DaysFragment();
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.DaysFragment, days);
+        fragmentTransaction.addToBackStack("");
+        fragmentTransaction.commit();
+        Log.i(LOG,"DaysFragment");
     }
 
 
@@ -131,38 +101,5 @@ public class MainActivity extends AppCompatActivity implements Constants {
 
         // Toast.makeText(getApplicationContext(), "Фрагмент", Toast.LENGTH_SHORT).show();
         Log.i(LOG,"OpenSecondActivity");
-    }
-
-
-    // Кнопка добавления фрагмента списка городов
-    public void openList(View view) {
-        ChoseCity cityFragment = new ChoseCity();
-        Button open = findViewById(R.id.buttonQuestion);
-        open.setOnClickListener(new ListenerOnAdd(cityFragment));
-        Log.i(LOG,"openList");
-    }
-
-
-    // Конструктор из урока
-    class ListenerOnAdd implements View.OnClickListener {
-
-        Fragment fragment;
-
-        ListenerOnAdd(Fragment fragment) {
-            this.fragment = fragment;
-        }
-
-        @Override
-        public void onClick(View v) {
-            addFragment();
-        }
-
-        private void addFragment() {
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.add(R.id.ChoseCity, fragment);
-            fragmentTransaction.addToBackStack("");
-            fragmentTransaction.commit();
-            Log.i(LOG,"addCityList");
-        }
     }
 }

@@ -20,10 +20,6 @@
     <string name="PresentTemp">0</string>
     <string name="FutureTemp">12</string>
 
-    <string name="Monday">Понедельник</string>
-    <string name="Tuesday">Вторник</string>
-    <string name="Wednesday">Среда</string>
-
     <string name="DayOneT">+11C</string>
     <string name="DayTwoT">+10C</string>
     <string name="DayThreeT">+13C</string>

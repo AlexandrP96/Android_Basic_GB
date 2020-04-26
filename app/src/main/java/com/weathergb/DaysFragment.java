@@ -7,15 +7,14 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ChoseCity extends Fragment {
+public class DaysFragment extends Fragment {
 
-    public ChoseCity() {
+    public DaysFragment() {
         // Required empty public constructor
     }
 
@@ -24,10 +23,6 @@ public class ChoseCity extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_chose_city, container, false);
-    }
-
-    public void ChoseButton(View view) {
-        Toast.makeText(getContext(), "Не пашет", Toast.LENGTH_SHORT).show();
+        return inflater.inflate(R.layout.fragment_days, container, false);
     }
 }

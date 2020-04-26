@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/default_sun_blur"
+    android:orientation="vertical"
+    tools:context=".DaysFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/DayOne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Monday"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:text="@string/Monday" />
+
+    <TextView
+        android:id="@+id/DayTwo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Tuesday"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/DayThree"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Wednesday"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/DayFour"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Thursday"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/DayFive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Friday"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/DaySix"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Saturday"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/DaySeven"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Sunday"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

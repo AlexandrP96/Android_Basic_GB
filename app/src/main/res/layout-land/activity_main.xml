@@ -5,15 +5,14 @@
     android:id="@+id/MainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/land_cloudy_blur"
+    android:background="@drawable/default_cloudy_blur"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:id="@+id/HelloLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="clip_horizontal|center"
         android:orientation="horizontal">
 
         <Button
@@ -46,7 +45,7 @@
             android:id="@+id/buttonQuestion"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:onClick="openList"
+            android:onClick="onClick"
             android:text="@string/Button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -56,16 +55,14 @@
             app:layout_constraintVertical_bias="0.092" />
     </LinearLayout>
 
-    <FrameLayout
-        android:id="@+id/FragmentContainer"
-        android:layout_width="142dp"
-        android:layout_height="52dp"
+    <TextView
+        android:id="@+id/currentCityV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.187" />
+        android:text="@string/City"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textType"
@@ -192,7 +189,7 @@
 
     <LinearLayout
         android:id="@+id/FutureDays"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:orientation="horizontal"
@@ -263,10 +260,11 @@
     </LinearLayout>
 
     <FrameLayout
-        android:id="@+id/ChoseCity"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingBottom="200dp">
+        android:id="@+id/DaysFragment"
+        android:layout_width="270dp"
+        android:layout_height="244dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp">
 
     </FrameLayout>
 

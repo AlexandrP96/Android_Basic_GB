@@ -45,7 +45,7 @@
             android:id="@+id/buttonQuestion"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:onClick="openList"
+            android:onClick="onClick"
             android:text="@string/Button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -260,9 +260,10 @@
     </LinearLayout>
 
     <FrameLayout
-        android:id="@+id/ChoseCity"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:id="@+id/DaysFragment"
+        android:layout_width="270dp"
+        android:layout_height="244dp"
+        android:layout_gravity="center"
         android:layout_marginTop="30dp">
 
     </FrameLayout>

@@ -5,25 +5,22 @@
     android:id="@+id/MainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/dark_background"
+    android:background="@drawable/default_cloudy_blur"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:id="@+id/HelloLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="clip_horizontal|center"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/buttonAdd"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:background="#484848"
             android:onClick="onClick"
             android:text="@string/button2"
-            android:textColor="#ABABAB"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.055"
@@ -36,7 +33,6 @@
             android:layout_width="250dp"
             android:layout_height="37dp"
             android:text="@string/hello"
-            android:textColor="#ABABAB"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -49,10 +45,8 @@
             android:id="@+id/buttonQuestion"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:background="#484848"
-            android:onClick="openList"
+            android:onClick="onClick"
             android:text="@string/Button"
-            android:textColor="#ABABAB"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.944"
@@ -61,16 +55,14 @@
             app:layout_constraintVertical_bias="0.092" />
     </LinearLayout>
 
-    <FrameLayout
-        android:id="@+id/FragmentContainer"
-        android:layout_width="142dp"
-        android:layout_height="52dp"
+    <TextView
+        android:id="@+id/currentCityV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.187" />
+        android:text="@string/City"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textType"
@@ -78,7 +70,6 @@
         android:layout_height="36dp"
         android:layout_gravity="center"
         android:text="@string/textType"
-        android:textColor="#ABABAB"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -107,7 +98,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/Plus"
-            android:textColor="#ABABAB"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -117,7 +107,6 @@
             android:layout_height="40dp"
             android:layout_weight="1"
             android:text="@string/weather"
-            android:textColor="#ABABAB"
             android:textSize="30sp"
             android:textStyle="bold"
             tools:text="0" />
@@ -147,7 +136,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/PastWT"
-                android:textColor="#ABABAB"
                 android:textStyle="bold" />
 
             <TextView
@@ -156,7 +144,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/PresentWT"
-                android:textColor="#ABABAB"
                 android:textStyle="bold" />
 
             <TextView
@@ -165,7 +152,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/FutureWT"
-                android:textColor="#ABABAB"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -181,7 +167,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/PastTemp"
-                android:textColor="#ABABAB"
                 android:textStyle="bold" />
 
             <TextView
@@ -190,7 +175,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/PresentTemp"
-                android:textColor="#ABABAB"
                 android:textStyle="bold" />
 
             <TextView
@@ -199,14 +183,13 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/FutureTemp"
-                android:textColor="#ABABAB"
                 android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/FutureDays"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:orientation="horizontal"
@@ -230,7 +213,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/Monday"
-                android:textColor="#ABABAB"
                 android:textStyle="bold" />
 
             <TextView
@@ -238,7 +220,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/Tuesday"
-                android:textColor="#ABABAB"
                 android:textStyle="bold" />
 
             <TextView
@@ -246,7 +227,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/Wednesday"
-                android:textColor="#ABABAB"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -261,7 +241,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/DayOneT"
-                android:textColor="#ABABAB"
                 android:textStyle="bold" />
 
             <TextView
@@ -269,7 +248,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/DayTwoT"
-                android:textColor="#ABABAB"
                 android:textStyle="bold" />
 
             <TextView
@@ -277,16 +255,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/DayThreeT"
-                android:textColor="#ABABAB"
                 android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
 
     <FrameLayout
-        android:id="@+id/ChoseCity"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingBottom="200dp">
+        android:id="@+id/DaysFragment"
+        android:layout_width="270dp"
+        android:layout_height="244dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp">
 
     </FrameLayout>
 
