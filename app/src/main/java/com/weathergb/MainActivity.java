@@ -2,6 +2,7 @@ package com.weathergb;
 
 import android.annotation.SuppressLint;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -13,30 +14,19 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements Constants {
 
-    // Констната Лога
+    // Добавить RecycleView
+    // Исправил парсель
+
     private static final String LOG = "Activity";
     private static final String TEMPS = "TEMP_S";
-    // Температура на данный момент
-    // Вынес в класс по примеру из урока
+    private static final int REQ_CODE_99 = 99;
     private int currTemp = 10;
 
 
-    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        TextView currentCity = findViewById(R.id.currentCityV);
-        Parcel parcel = (Parcel) getIntent().getSerializableExtra(PARCEL);
-        // Объект City (Дефолтный город для отображения при запуске)
-        String City = "Paris";
-        // Условие для parcel при запуске приложения
-        if (parcel == null) {
-            currentCity.setText(City);
-        } else {
-            currentCity.setText(parcel.currentCity);
-        }
 
         appTemp();
         DaysF();
@@ -44,7 +34,28 @@ public class MainActivity extends AppCompatActivity implements Constants {
     }
 
 
-    // Восстановление
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        TextView currentCity = findViewById(R.id.currentCityV);
+
+        if (requestCode == REQ_CODE_99) {
+            if (resultCode == RESULT_OK) {
+                if (data != null) {
+                    Parcel parcel = (Parcel)data.getSerializableExtra(PARCEL);
+                    if (parcel != null) {
+                        currentCity.setText(parcel.currentCity);
+                    } else {
+                        String City = "Paris";
+                        currentCity.setText(City);
+                    }
+                }
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+        Log.i(LOG,"onActivityResult");
+    }
+
+
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
@@ -54,7 +65,6 @@ public class MainActivity extends AppCompatActivity implements Constants {
     }
 
 
-    // Сохранение данных
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -64,7 +74,6 @@ public class MainActivity extends AppCompatActivity implements Constants {
     }
 
 
-    // Логика установки температуры
     @SuppressLint("SetTextI18n")
     protected void appTemp() {
         TextView cel = findViewById(R.id.textWeather);
@@ -77,7 +86,6 @@ public class MainActivity extends AppCompatActivity implements Constants {
     }
 
 
-    // Фрагмент с температурой по дням
     protected void DaysF() {
         DaysFragment days = new DaysFragment();
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
@@ -88,11 +96,9 @@ public class MainActivity extends AppCompatActivity implements Constants {
     }
 
 
-    // Кнопка открытия второго Активити
     public void onClick(View v) {
-        // Переход на SecondActivity
         Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
-        startActivity(intent);
+        startActivityForResult(intent, REQ_CODE_99);
 
         Log.i(LOG,"OpenSecondActivity");
     }
