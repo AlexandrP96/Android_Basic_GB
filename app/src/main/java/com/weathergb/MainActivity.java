@@ -14,8 +14,6 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements Constants {
 
-    // Добавить RecycleView
-    // Исправил парсель
 
     private static final String LOG = "Activity";
     private static final String TEMPS = "TEMP_S";
