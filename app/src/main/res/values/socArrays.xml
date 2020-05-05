@@ -2,7 +2,7 @@
 <resources>
     <string-array name="cities">
         <item>Tokyo</item>
-        <item>New_York</item>
+        <item>New York</item>
         <item>Odessa</item>
         <item>Kiev</item>
         <item>Omsk</item>

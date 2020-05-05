@@ -3,4 +3,14 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+
+    <color name="colorDefaultButton">#9203A9F4</color>
+    <color name="colorButtonDark">#92000000</color>
+
+    <color name="colorTextDefault">#000000</color>
+    <color name="colorTextDark">#FFFFFF</color>
+
+    <color name="colorFragmentDefault">#4F03A9F4</color>
+    <color name="colorFragmentDark">#4F212121</color>
+
 </resources>

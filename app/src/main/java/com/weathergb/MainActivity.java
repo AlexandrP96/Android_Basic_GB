@@ -10,6 +10,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements Constants {
@@ -28,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements Constants {
 
         appTemp();
         DaysF();
+        WeatherAnimation();
         Log.i(LOG,"onCreate");
     }
 
@@ -43,8 +47,7 @@ public class MainActivity extends AppCompatActivity implements Constants {
                     if (parcel != null) {
                         currentCity.setText(parcel.currentCity);
                     } else {
-                        String City = "Paris";
-                        currentCity.setText(City);
+                        currentCity.setText(R.string.Default);
                     }
                 }
             }
@@ -78,9 +81,17 @@ public class MainActivity extends AppCompatActivity implements Constants {
         TextView cel2 = findViewById(R.id.PresentTemp);
 
         cel.setText(currTemp + " C");
-        cel2.setText("+ " + currTemp + "C");
+        cel2.setText("+ " + currTemp + " C");
 
         Log.i(LOG,"AppLogic");
+    }
+
+
+    protected void WeatherAnimation() {
+        Animation animation;
+        animation = AnimationUtils.loadAnimation(this, R.anim.defaultanim);
+        ImageView screen = findViewById(R.id.AnimView);
+        screen.startAnimation(animation);
     }
 
 
