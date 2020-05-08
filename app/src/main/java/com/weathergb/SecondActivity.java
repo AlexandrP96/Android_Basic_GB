@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -25,17 +24,25 @@ public class SecondActivity extends AppCompatActivity implements Constants {
 
     private void initList(String[] data) {
         final RecyclerView recyclerView = findViewById(R.id.recycler_view);
-
         recyclerView.setHasFixedSize(true);
 
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
-        recyclerView.setLayoutManager(layoutManager);
+        LayoutManager(recyclerView);
 
-        final SocAdapter adapter = new SocAdapter(data);
+        final Recycler adapter = new Recycler(data);
         recyclerView.setAdapter(adapter);
 
-        adapter.SetOnItemClickListener(new SocAdapter.OnItemClickListener() {
-            @SuppressLint("SetTextI18n")
+        onRecyclerClick(adapter);
+    }
+
+
+    private void LayoutManager(RecyclerView recyclerView) {
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
+        recyclerView.setLayoutManager(layoutManager);
+    }
+
+
+    private void onRecyclerClick(Recycler adapter) {
+        adapter.SetOnItemClickListener(new Recycler.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
                 EditText SecondView = findViewById(R.id.UserText);

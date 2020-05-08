@@ -17,7 +17,6 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements Constants {
 
-
     private static final String LOG = "Activity";
     private static final String TEMPS = "TEMP_S";
     private static final int REQ_CODE_99 = 99;

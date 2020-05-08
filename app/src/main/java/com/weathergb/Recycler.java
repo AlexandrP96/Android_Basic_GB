@@ -8,27 +8,27 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-class SocAdapter extends RecyclerView.Adapter<SocAdapter.ViewHolder> {
+class Recycler extends RecyclerView.Adapter<Recycler.ViewHolder> {
 
     private String[] dataSource;
     private OnItemClickListener onItemClickListener;
 
 
-    SocAdapter(String[] dataSource) {
+    Recycler(String[] dataSource) {
         this.dataSource = dataSource;
     }
 
 
     @NonNull
     @Override
-    public SocAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public Recycler.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item, parent, false);
         return new ViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull SocAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull Recycler.ViewHolder holder, int position) {
         holder.getTextView().setText(dataSource[position]);
     }
 
