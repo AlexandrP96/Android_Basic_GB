@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="Tokyo">"Tokyo"</string>
-    <string name="New_York">"New_York"</string>
-    <string name="Tallin">"Tallin"</string>
+    <string name="New_York">"New York"</string>
+    <string name="Tallinn">"Tallinn"</string>
     <string name="Odessa">"Odessa"</string>
     <string name="Kiev">"Kiev"</string>
     <string name="Berlin">"Berlin"</string>

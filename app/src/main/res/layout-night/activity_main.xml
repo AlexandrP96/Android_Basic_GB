@@ -20,12 +20,13 @@
 
         <Button
             android:id="@+id/buttonAdd"
-            android:layout_width="80dp"
+            android:layout_width="51dp"
             android:layout_height="wrap_content"
-            android:background="#92000000"
+            android:background="@drawable/button_night"
             android:onClick="onClick"
+            android:shadowColor="#000000"
             android:text="@string/button2"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/colorTextDark"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.055"
@@ -40,7 +41,7 @@
             android:paddingLeft="40dp"
             android:paddingRight="40dp"
             android:text="@string/hello"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/colorTextDark"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -51,34 +52,60 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/currentCityV"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/StatAnim"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:paddingTop="30dp"
-        android:text="@string/City"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/textType"
-        android:layout_width="83dp"
-        android:layout_height="36dp"
-        android:layout_gravity="center"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:text="@string/textType"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.397" />
+        <LinearLayout
+            android:id="@+id/StatLayout"
+            android:layout_width="134dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
+
+            <TextView
+                android:id="@+id/currentCityV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="30dp"
+                android:shadowColor="#000000"
+                android:text="@string/City"
+                android:textColor="@color/colorTextDark"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textType"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="@string/textCloudy"
+                android:textColor="@color/colorTextDark"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.509"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.397" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/AnimView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/icon"
+            app:srcCompat="@drawable/cloudyn" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/CurrentTemp"
@@ -99,7 +126,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/Plus"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/colorTextDark"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -109,7 +136,7 @@
             android:layout_height="40dp"
             android:layout_weight="1"
             android:text="@string/weather"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/colorTextDark"
             android:textSize="30sp"
             android:textStyle="bold"
             tools:text="0" />
@@ -140,7 +167,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/PastWT"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/colorTextDark"
                 android:textStyle="bold" />
 
             <TextView
@@ -149,7 +176,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/PresentWT"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/colorTextDark"
                 android:textStyle="bold" />
 
             <TextView
@@ -158,7 +185,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/FutureWT"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/colorTextDark"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -174,7 +201,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/PastTemp"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/colorTextDark"
                 android:textStyle="bold" />
 
             <TextView
@@ -183,7 +210,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/PresentTemp"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/colorTextDark"
                 android:textStyle="bold" />
 
             <TextView
@@ -192,18 +219,19 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/FutureTemp"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/colorTextDark"
                 android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
 
     <FrameLayout
         android:id="@+id/DaysFragment"
-        android:layout_width="315dp"
-        android:layout_height="252dp"
+        android:layout_width="340dp"
+        android:layout_height="236dp"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
-        android:background="#4F212121">
+        android:background="@color/colorFragmentDark"
+        android:clickable="false">
 
     </FrameLayout>
 

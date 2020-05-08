@@ -40,11 +40,11 @@ public class SecondActivity extends AppCompatActivity implements Constants {
             public void onItemClick(View view, int position) {
                 EditText SecondView = findViewById(R.id.UserText);
                 if (position == 0) {
-                    SecondView.setText("Tokyo");
+                    SecondView.setText(R.string.Tokyo);
                     CreateIntent();
                 }
                 if (position == 1) {
-                    SecondView.setText("New York");
+                    SecondView.setText(R.string.New_York);
                     CreateIntent();
                 }
             }
@@ -68,7 +68,14 @@ public class SecondActivity extends AppCompatActivity implements Constants {
     private Parcel createParcel() {
         EditText SecondView = findViewById(R.id.UserText);
         Parcel parcel = new Parcel();
+
         parcel.currentCity = SecondView.getText().toString();
+
+        if (parcel.currentCity.equals("")) {
+            SecondView.setText(R.string.Default);
+            parcel.currentCity = SecondView.getText().toString();
+        }
+
         return parcel;
     }
 }

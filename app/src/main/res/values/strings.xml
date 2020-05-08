@@ -13,12 +13,12 @@
     <string name="Celsius">C</string>
 
     <string name="PastWT">11.00</string>
-    <string name="PresentWT">12.00</string>
+    <string name="PresentWT">Present</string>
     <string name="FutureWT">13.00</string>
 
-    <string name="PastTemp">+ 8C</string>
-    <string name="PresentTemp">+ 9C</string>
-    <string name="FutureTemp">+ 12C</string>
+    <string name="PastTemp">+ 8 C</string>
+    <string name="PresentTemp">+ 9 C</string>
+    <string name="FutureTemp">+ 12 C</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
@@ -29,5 +29,7 @@
     <string name="DefaultTemp">+ 10C</string>
     <string name="Popular">Popular:</string>
     <string name="icon">icon</string>
+    <string name="Default">Moscow</string>
+    <string name="textCloudy">Cloudy</string>
 
 </resources>
