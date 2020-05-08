@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/FragmentLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DaysFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:id="@+id/DaysLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/DayOne"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/Monday"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            tools:text="@string/Monday" />
+
+        <TextView
+            android:id="@+id/DayTwo"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/Tuesday"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/DayThree"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/Wednesday"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/DayFour"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/Thursday"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/DayFive"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/Friday"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/DaySix"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/Saturday"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/DaySeven"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/Sunday"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/TempLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/DayOneTemp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/DefaultTemp"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/DayTwoTemp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/DefaultTemp"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/DayThreeTemp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/DefaultTemp"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/DayFourthTemp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/DefaultTemp"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/DayFiveTemp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/DefaultTemp"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/DaySixTemp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/DefaultTemp"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/DaySevenTemp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/DefaultTemp"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/IconLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/PicOne"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:contentDescription="@string/icon"
+            android:src="@android:drawable/btn_star"
+            app:srcCompat="@drawable/wind"
+            tools:srcCompat="@drawable/wind" />
+
+        <ImageView
+            android:id="@+id/PicTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:contentDescription="@string/icon"
+            android:src="@android:drawable/btn_star"
+            app:srcCompat="@drawable/rain"
+            tools:srcCompat="@drawable/rain" />
+
+        <ImageView
+            android:id="@+id/PicThree"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:contentDescription="@string/icon"
+            android:src="@android:drawable/btn_star"
+            app:srcCompat="@drawable/snow"
+            tools:srcCompat="@drawable/snow" />
+
+        <ImageView
+            android:id="@+id/PicFour"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:contentDescription="@string/icon"
+            android:src="@android:drawable/btn_star_big_on"
+            app:srcCompat="@drawable/wind"
+            tools:srcCompat="@drawable/wind" />
+
+        <ImageView
+            android:id="@+id/PicFive"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:contentDescription="@string/icon"
+            android:src="@android:drawable/btn_star_big_on"
+            app:srcCompat="@drawable/sun"
+            tools:srcCompat="@drawable/sun" />
+
+        <ImageView
+            android:id="@+id/PicSeven"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:contentDescription="@string/icon"
+            android:src="@android:drawable/btn_star_big_on"
+            app:srcCompat="@drawable/cloudy"
+            tools:srcCompat="@drawable/cloudy" />
+
+        <ImageView
+            android:id="@+id/PicSix"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:contentDescription="@string/icon"
+            android:src="@android:drawable/btn_star_big_on"
+            app:srcCompat="@drawable/cloudyn"
+            tools:srcCompat="@drawable/cloudyn" />
+    </LinearLayout>
+
+</LinearLayout>
