@@ -35,5 +35,8 @@
     <string name="Wind">Wind</string>
     <string name="Pressure">Pressure</string>
     <string name="Humidity">Humidity</string>
+    <string name="DefaultUnit">0</string>
+    <string name="Refresh">R</string>
+    <string name="EmptyValue" />
 
 </resources>

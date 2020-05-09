@@ -43,4 +43,7 @@
     <string name="Wind">Ветер</string>
     <string name="Pressure">Давление</string>
     <string name="Humidity">Влажность</string>
+    <string name="DefaultUnit">0</string>
+    <string name="Refresh">R</string>
+    <string name="EmptyValue" />
 </resources>
