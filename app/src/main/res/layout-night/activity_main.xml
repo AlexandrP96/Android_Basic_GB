@@ -145,7 +145,7 @@
 
     <LinearLayout
         android:id="@+id/TimeDay"
-        android:layout_width="267dp"
+        android:layout_width="272dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:orientation="vertical"
@@ -163,28 +163,28 @@
 
             <TextView
                 android:id="@+id/PPressure"
-                android:layout_width="1dp"
+                android:layout_width="90dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/PastWT"
+                android:gravity="center"
+                android:text="@string/Pressure"
                 android:textColor="@color/colorTextDark"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/PresentWind"
-                android:layout_width="1dp"
+                android:layout_width="90dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/PresentWT"
+                android:gravity="center"
+                android:text="@string/Wind"
                 android:textColor="@color/colorTextDark"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/PHumidity"
-                android:layout_width="10dp"
+                android:layout_width="90dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/FutureWT"
+                android:gravity="center"
+                android:text="@string/Humidity"
                 android:textColor="@color/colorTextDark"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -197,28 +197,27 @@
 
             <TextView
                 android:id="@+id/PressureStat"
-                android:layout_width="1dp"
+                android:layout_width="90dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/PastTemp"
+                android:gravity="center"
+                android:text="@string/EmptyValue"
                 android:textColor="@color/colorTextDark"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/WindSpeed"
-                android:layout_width="1dp"
+                android:layout_width="90dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/PresentTemp"
+                android:gravity="center"
+                android:text="@string/EmptyValue"
                 android:textColor="@color/colorTextDark"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/HumidityStat"
-                android:layout_width="10dp"
+                android:layout_width="90dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/FutureTemp"
+                android:gravity="center"
+                android:text="@string/EmptyValue"
                 android:textColor="@color/colorTextDark"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -234,5 +233,22 @@
         android:clickable="false">
 
     </FrameLayout>
+
+    <Button
+        android:id="@+id/buttonRefresh2"
+        android:layout_width="51dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/button_night"
+        android:onClick="onRefresh"
+        android:shadowColor="#000000"
+        android:text="@string/Refresh"
+        android:textColor="@color/colorTextDark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.092" />
 
 </LinearLayout>

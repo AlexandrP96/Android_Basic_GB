@@ -18,12 +18,14 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.weathergb.winfo.WeatherRequest;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.stream.Collectors;
 
@@ -31,8 +33,6 @@ import javax.net.ssl.HttpsURLConnection;
 
 public class MainActivity extends AppCompatActivity implements Constants {
 
-
-    private static final String WEATHER_URL = "https://api.openweathermap.org/data/2.5/weather?q=moscow&units=metric&appid=";
     private static final String WEATHER_API_KEY = " ";
 
     private static final String LOG = "Activity";
@@ -40,35 +40,16 @@ public class MainActivity extends AppCompatActivity implements Constants {
     private static final int REQ_CODE_99 = 99;
     private int currTemp = 10;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Thread();
         DaysF();
         WeatherAnimation();
         Log.i(LOG, "onCreate");
-    }
-
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        TextView currentCity = findViewById(R.id.currentCityV);
-
-        if (requestCode == REQ_CODE_99) {
-            if (resultCode == RESULT_OK) {
-                if (data != null) {
-                    Parcel parcel = (Parcel) data.getSerializableExtra(PARCEL);
-                    if (parcel != null) {
-                        currentCity.setText(parcel.currentCity);
-                    } else {
-                        currentCity.setText(R.string.Default);
-                    }
-                }
-            }
-        }
-        super.onActivityResult(requestCode, resultCode, data);
-        Log.i(LOG, "onActivityResult");
     }
 
 
@@ -92,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements Constants {
 
     private void Thread() {
         try {
-            final URL uri = new URL(WEATHER_URL + WEATHER_API_KEY);
+            final URL uri = getUrl("moscow");
             final Handler handler = new Handler();
             new Thread(new Runnable() {
                 @RequiresApi(api = Build.VERSION_CODES.N)
@@ -132,16 +113,55 @@ public class MainActivity extends AppCompatActivity implements Constants {
     }
 
 
-    @SuppressLint({"DefaultLocale"})
+    private URL getUrl(String city) throws MalformedURLException {
+        return new URL("https://api.openweathermap.org/data/2.5/weather?q="
+                + city + "&units=metric&appid=" + WEATHER_API_KEY);
+    }
+
+
+    @SuppressLint({"DefaultLocale", "SetTextI18n"})
     private void DisplayInfo(WeatherRequest wr) {
         TextView Temp = findViewById(R.id.textWeather);
         TextView Pressure = findViewById(R.id.PressureStat);
         TextView Wind = findViewById(R.id.WindSpeed);
-        // TextView Humidity = findViewById(R.id.HumidityStat);
+
+        TextView currentCity = findViewById(R.id.currentCityV);
+        String temp = currentCity.getText().toString();
+
+        if (!wr.getName().equals(temp)) {
+            Toast.makeText(getApplicationContext(), "Неверный город", Toast.LENGTH_SHORT).show();
+        }
+
         Temp.setText(String.format("%f2", wr.getMain().getTemp()));
         Pressure.setText(String.format("%d", wr.getMain().getPressure()));
-        Wind.setText(String.format("%d", wr.getWind().getSpeed()));
-        // Humidity.setText(String.format("%d", wr.getMain().getHumidity()));
+        Wind.setText(String.format("%d", wr.getWind().getSpeed()) + " M");
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        TextView currentCity = findViewById(R.id.currentCityV);
+
+        if (requestCode == REQ_CODE_99) {
+            if (resultCode == RESULT_OK) {
+                if (data != null) {
+                    Parcel parcel = (Parcel) data.getSerializableExtra(PARCEL);
+                    if (parcel != null) {
+                            currentCity.setText(parcel.currentCity);
+                            try {
+                                getUrl(String.valueOf(parcel));
+                            } catch (MalformedURLException e) {
+                                e.printStackTrace();
+                            }
+                    } else {
+                        currentCity.setText(R.string.Default);
+                    }
+                }
+            }
+        }
+
+        super.onActivityResult(requestCode, resultCode, data);
+        Log.i(LOG, "onActivityResult");
     }
 
 

@@ -38,5 +38,6 @@
     <string name="DefaultUnit">0</string>
     <string name="Refresh">R</string>
     <string name="EmptyValue" />
+    <string name="Meters">M</string>
 
 </resources>
