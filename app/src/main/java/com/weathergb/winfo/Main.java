@@ -3,9 +3,8 @@ package com.weathergb.winfo;
 public class Main {
 
     private float temp;
-    private int temp_min;
-    private int temp_max;
-    private int wind;
+    private int pressure;
+    private int humidity;
 
     public float getTemp() {
         return temp;
@@ -15,27 +14,19 @@ public class Main {
         this.temp = temp;
     }
 
-    public int getTemp_min() {
-        return temp_min;
+    public int getPressure() {
+        return pressure;
     }
 
-    public void setTemp_min(int temp_min) {
-        this.temp_min = temp_min;
+    public void setPressure(int pressure) {
+        this.pressure = pressure;
     }
 
-    public int getTemp_max() {
-        return temp_max;
+    public int getHumidity() {
+        return humidity;
     }
 
-    public void setTemp_max(int temp_max) {
-        this.temp_max = temp_max;
-    }
-
-    public int getWind() {
-        return wind;
-    }
-
-    public void setWind(int wind) {
-        this.wind = wind;
+    public void setHumidity(int humidity) {
+        this.humidity = humidity;
     }
 }

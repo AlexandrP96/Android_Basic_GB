@@ -162,7 +162,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/PastWT"
+                android:id="@+id/PPressure"
                 android:layout_width="1dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -171,7 +171,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/PresentWT"
+                android:id="@+id/PresentWind"
                 android:layout_width="1dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -180,7 +180,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/FutureWT"
+                android:id="@+id/PHumidity"
                 android:layout_width="10dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -196,7 +196,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/PastTemp"
+                android:id="@+id/PressureStat"
                 android:layout_width="1dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -205,7 +205,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/PresentTemp"
+                android:id="@+id/WindSpeed"
                 android:layout_width="1dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -214,7 +214,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/FutureTemp"
+                android:id="@+id/HumidityStat"
                 android:layout_width="10dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

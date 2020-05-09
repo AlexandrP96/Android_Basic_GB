@@ -26,10 +26,14 @@
     <string name="Enter">Enter your City:</string>
     <string name="ParcelText">""</string>
     <string name="AddButton">Add</string>
-    <string name="DefaultTemp">+ 10C</string>
+    <string name="DefaultTemp">+ 10 C</string>
     <string name="Popular">Popular:</string>
     <string name="icon">icon</string>
     <string name="Default">Moscow</string>
     <string name="textCloudy">Cloudy</string>
+
+    <string name="Wind">Wind</string>
+    <string name="Pressure">Pressure</string>
+    <string name="Humidity">Humidity</string>
 
 </resources>

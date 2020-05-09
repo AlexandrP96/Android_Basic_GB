@@ -2,11 +2,20 @@ package com.weathergb.winfo;
 
 public class WeatherRequest {
 
+    private Coord coord;
     private Weather[] weather;
     private Main main;
     private Wind wind;
-    private Clouds cloud;
+    private Clouds clouds;
     private String name;
+
+    public Coord getCoord() {
+        return coord;
+    }
+
+    public void setCoord(Coord coord) {
+        this.coord = coord;
+    }
 
     public Weather[] getWeather() {
         return weather;
@@ -32,12 +41,12 @@ public class WeatherRequest {
         this.wind = wind;
     }
 
-    public Clouds getCloud() {
-        return cloud;
+    public Clouds getClouds() {
+        return clouds;
     }
 
-    public void setCloud(Clouds cloud) {
-        this.cloud = cloud;
+    public void setClouds(Clouds clouds) {
+        this.clouds = clouds;
     }
 
     public String getName() {
