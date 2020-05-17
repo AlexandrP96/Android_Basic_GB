@@ -33,7 +33,6 @@ import javax.net.ssl.HttpsURLConnection;
 
 public class MainActivity extends AppCompatActivity implements Constants {
 
-    private static final String WEATHER_API_KEY = " ";
 
     private static final String LOG = "Activity";
     private static final String TEMPS = "TEMP_S";
@@ -115,7 +114,7 @@ public class MainActivity extends AppCompatActivity implements Constants {
 
     private URL getUrl(String city) throws MalformedURLException {
         return new URL("https://api.openweathermap.org/data/2.5/weather?q="
-                + city + "&units=metric&appid=" + WEATHER_API_KEY);
+                + city + "&units=metric&appid=" + BuildConfig.WEATHER_API_KEY);
     }
 
 
