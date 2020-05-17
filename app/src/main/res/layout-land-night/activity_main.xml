@@ -54,6 +54,23 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.089" />
 
+            <Button
+                android:id="@+id/buttonRefresh3"
+                android:layout_width="51dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/button_night"
+                android:onClick="onRefresh"
+                android:shadowColor="#000000"
+                android:text="@string/Refresh"
+                android:textColor="@color/colorTextDark"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.055"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.092" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -148,8 +165,9 @@
 
         <LinearLayout
             android:id="@+id/TimeDay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
             android:orientation="vertical"
             android:paddingTop="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -164,29 +182,29 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/PastWT"
-                    android:layout_width="1dp"
+                    android:id="@+id/PPressure"
+                    android:layout_width="90dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/PastWT"
+                    android:gravity="center"
+                    android:text="@string/Pressure"
                     android:textColor="@color/colorTextDark"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/PresentWT"
-                    android:layout_width="1dp"
+                    android:id="@+id/PresentWind"
+                    android:layout_width="90dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/PresentWT"
+                    android:gravity="center"
+                    android:text="@string/Wind"
                     android:textColor="@color/colorTextDark"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/FutureWT"
-                    android:layout_width="10dp"
+                    android:id="@+id/PHumidity"
+                    android:layout_width="90dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/FutureWT"
+                    android:gravity="center"
+                    android:text="@string/Humidity"
                     android:textColor="@color/colorTextDark"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -198,29 +216,28 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/PastTemp"
-                    android:layout_width="1dp"
+                    android:id="@+id/PressureStat"
+                    android:layout_width="90dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/PastTemp"
+                    android:gravity="center"
+                    android:text="@string/EmptyValue"
                     android:textColor="@color/colorTextDark"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/PresentTemp"
-                    android:layout_width="1dp"
+                    android:id="@+id/WindSpeed"
+                    android:layout_width="90dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/PresentTemp"
+                    android:gravity="center"
+                    android:text="@string/EmptyValue"
                     android:textColor="@color/colorTextDark"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/FutureTemp"
-                    android:layout_width="10dp"
+                    android:layout_width="90dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/FutureTemp"
+                    android:gravity="center"
+                    android:text="@string/EmptyValue"
                     android:textColor="@color/colorTextDark"
                     android:textStyle="bold" />
             </LinearLayout>
