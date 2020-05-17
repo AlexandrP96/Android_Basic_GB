@@ -68,6 +68,7 @@ public class SecondActivity extends AppCompatActivity implements Constants {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         intent.putExtra(PARCEL, createParcel());
         setResult(RESULT_OK, intent);
+
         finish();
     }
 
@@ -82,7 +83,6 @@ public class SecondActivity extends AppCompatActivity implements Constants {
             SecondView.setText(R.string.Default);
             parcel.currentCity = SecondView.getText().toString();
         }
-
         return parcel;
     }
 }

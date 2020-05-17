@@ -2,6 +2,7 @@ package com.weathergb;
 
 import android.annotation.SuppressLint;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,7 +16,6 @@ import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements Constants {
 
     private static final String LOG = "Activity";
     private static final int REQ_CODE_99 = 99;
-
+    private MainFragment FGL;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,18 +49,18 @@ public class MainActivity extends AppCompatActivity implements Constants {
     }
 
 
-//    @Override
-//    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
-//        super.onRestoreInstanceState(savedInstanceState);
-//        Log.i(LOG, "RestoreInstance");
-//    }
-//
-//
-//    @Override
-//    protected void onSaveInstanceState(Bundle outState) {
-//        super.onSaveInstanceState(outState);
-//        Log.i(LOG, "SaveInstance");
-//    }
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        Log.i(LOG, "RestoreInstance");
+    }
+
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.i(LOG, "SaveInstance");
+    }
 
 
     private void Thread() {
@@ -167,15 +167,14 @@ public class MainActivity extends AppCompatActivity implements Constants {
     }
 
 
+    public void setFragmentList(MainRecycler fragmentList) {
+        FGL = fragmentList;
+    }
+
+
     public void ButtonListener(View view) {
-        Button button = findViewById(R.id.buttonAdd);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
-                startActivityForResult(intent, REQ_CODE_99);
-                Log.i(LOG, "OpenSecondActivity");
-            }
-        });
+        Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
+        startActivityForResult(intent, REQ_CODE_99);
+        Log.i(LOG, "OpenSecondActivity");
     }
 }
