@@ -39,5 +39,6 @@
     <string name="Refresh">R</string>
     <string name="EmptyValue" />
     <string name="Meters">M</string>
+    <string name="History">History:</string>
 
 </resources>

@@ -18,7 +18,6 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.weathergb.winfo.WeatherRequest;
@@ -33,13 +32,10 @@ import javax.net.ssl.HttpsURLConnection;
 
 public class MainActivity extends AppCompatActivity implements Constants {
 
-    private static final String WEATHER_API_KEY = " ";
 
     private static final String LOG = "Activity";
-    private static final String TEMPS = "TEMP_S";
     private static final int REQ_CODE_99 = 99;
-    private int currTemp = 10;
-
+    private MainFragment FGL;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,8 +52,6 @@ public class MainActivity extends AppCompatActivity implements Constants {
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        currTemp = savedInstanceState.getInt(TEMPS);
-
         Log.i(LOG, "RestoreInstance");
     }
 
@@ -65,8 +59,6 @@ public class MainActivity extends AppCompatActivity implements Constants {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putInt(TEMPS, currTemp);
-
         Log.i(LOG, "SaveInstance");
     }
 
@@ -79,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements Constants {
                 @RequiresApi(api = Build.VERSION_CODES.N)
                 @Override
                 public void run() {
-                    HttpsURLConnection urlC = null;
+                    HttpsURLConnection urlC;
                     try {
                         urlC = (HttpsURLConnection) uri.openConnection();
                         urlC.setRequestMethod("GET");
@@ -113,9 +105,9 @@ public class MainActivity extends AppCompatActivity implements Constants {
     }
 
 
-    private URL getUrl(String city) throws MalformedURLException {
+    protected static URL getUrl(String city) throws MalformedURLException {
         return new URL("https://api.openweathermap.org/data/2.5/weather?q="
-                + city + "&units=metric&appid=" + WEATHER_API_KEY);
+                + city + "&units=metric&appid=" + BuildConfig.WEATHER_API_KEY);
     }
 
 
@@ -124,14 +116,6 @@ public class MainActivity extends AppCompatActivity implements Constants {
         TextView Temp = findViewById(R.id.textWeather);
         TextView Pressure = findViewById(R.id.PressureStat);
         TextView Wind = findViewById(R.id.WindSpeed);
-
-        TextView currentCity = findViewById(R.id.currentCityV);
-        String temp = currentCity.getText().toString();
-
-        if (!wr.getName().equals(temp)) {
-            Toast.makeText(getApplicationContext(), "Неверный город", Toast.LENGTH_SHORT).show();
-        }
-
         Temp.setText(String.format("%f2", wr.getMain().getTemp()));
         Pressure.setText(String.format("%d", wr.getMain().getPressure()));
         Wind.setText(String.format("%d", wr.getWind().getSpeed()) + " M");
@@ -147,12 +131,12 @@ public class MainActivity extends AppCompatActivity implements Constants {
                 if (data != null) {
                     Parcel parcel = (Parcel) data.getSerializableExtra(PARCEL);
                     if (parcel != null) {
-                            currentCity.setText(parcel.currentCity);
-                            try {
-                                getUrl(String.valueOf(parcel));
-                            } catch (MalformedURLException e) {
-                                e.printStackTrace();
-                            }
+                        currentCity.setText(parcel.currentCity);
+                        try {
+                            getUrl(String.valueOf(parcel));
+                        } catch (MalformedURLException e) {
+                            e.printStackTrace();
+                        }
                     } else {
                         currentCity.setText(R.string.Default);
                     }
@@ -183,15 +167,14 @@ public class MainActivity extends AppCompatActivity implements Constants {
     }
 
 
-    public void onClick(View v) {
-        Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
-        startActivityForResult(intent, REQ_CODE_99);
-        Log.i(LOG, "OpenSecondActivity");
+    public void setFragmentList(MainRecycler fragmentList) {
+        FGL = fragmentList;
     }
 
 
-    public void onRefresh(View v) {
-        Thread();
-        Log.i(LOG, "Thread Launch");
+    public void ButtonListener(View view) {
+        Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
+        startActivityForResult(intent, REQ_CODE_99);
+        Log.i(LOG, "OpenSecondActivity");
     }
 }
